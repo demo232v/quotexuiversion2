@@ -1,1 +1,598 @@
-function _0x8fb6(_0x18353e,_0x8befa7){const _0xdfb21e=_0xdfb2();return _0x8fb6=function(_0x8fb650,_0x129679){_0x8fb650=_0x8fb650-0x1e5;let _0x4b777c=_0xdfb21e[_0x8fb650];return _0x4b777c;},_0x8fb6(_0x18353e,_0x8befa7);}(function(_0x18a463,_0x292556){const _0x21fcd8=_0x8fb6,_0x24be13=_0x18a463();while(!![]){try{const _0x2a5321=parseInt(_0x21fcd8(0x255))/0x1+parseInt(_0x21fcd8(0x26f))/0x2+-parseInt(_0x21fcd8(0x1eb))/0x3+parseInt(_0x21fcd8(0x20e))/0x4+-parseInt(_0x21fcd8(0x1e6))/0x5*(-parseInt(_0x21fcd8(0x27c))/0x6)+-parseInt(_0x21fcd8(0x1f5))/0x7+-parseInt(_0x21fcd8(0x27a))/0x8;if(_0x2a5321===_0x292556)break;else _0x24be13['push'](_0x24be13['shift']());}catch(_0x304e46){_0x24be13['push'](_0x24be13['shift']());}}}(_0xdfb2,0x34981),(async function(){const _0x11ea12=_0x8fb6;typeof Swal===_0x11ea12(0x26e)&&await new Promise((_0x63003,_0x3b03db)=>{const _0x3406b4=_0x11ea12,_0x27c1e6=document['createElement'](_0x3406b4(0x250));_0x27c1e6[_0x3406b4(0x287)]=_0x3406b4(0x207),_0x27c1e6[_0x3406b4(0x259)]=_0x63003,_0x27c1e6[_0x3406b4(0x247)]=_0x3b03db,document[_0x3406b4(0x225)]['appendChild'](_0x27c1e6);});const _0x1b8e71=_0x11ea12(0x254),_0x2876f2=_0x11ea12(0x215),_0x181fcc=_0x11ea12(0x261);let _0x2bbec4=![],_0x1d0fc4=0x30d4;function _0x17127f(){const _0x3270ad=_0x11ea12,_0x5d9c94=navigator['userAgent']||'',_0x1dc1bc=Array[_0x3270ad(0x22e)](navigator[_0x3270ad(0x24b)]||[])[_0x3270ad(0x220)](_0x34dfa4=>_0x34dfa4['name'])[_0x3270ad(0x23e)](',\x20');return{'fingerprint':localStorage[_0x3270ad(0x1f7)](_0x3270ad(0x276))||_0x3270ad(0x1ff)+Math[_0x3270ad(0x245)]()[_0x3270ad(0x204)](0x24)[_0x3270ad(0x28b)](0x2,0xc),'deviceType':/Mobile/['test'](_0x5d9c94)?'Mobile':/Tablet/[_0x3270ad(0x28a)](_0x5d9c94)?_0x3270ad(0x1f4):'Desktop','browser':/Firefox/[_0x3270ad(0x28a)](_0x5d9c94)&&_0x3270ad(0x22f)||/Chrome/['test'](_0x5d9c94)&&_0x3270ad(0x263)||/Safari/['test'](_0x5d9c94)&&_0x3270ad(0x1ec)||_0x3270ad(0x216),'os':/Windows/[_0x3270ad(0x28a)](_0x5d9c94)&&_0x3270ad(0x252)||/Macintosh/[_0x3270ad(0x28a)](_0x5d9c94)&&'Mac\x20OS'||/Android/[_0x3270ad(0x28a)](_0x5d9c94)&&_0x3270ad(0x22a)||_0x3270ad(0x216),'userAgent':_0x5d9c94,'screenResolution':window[_0x3270ad(0x200)][_0x3270ad(0x1fa)]+'x'+window[_0x3270ad(0x200)]['height'],'plugins':_0x1dc1bc,'hardwareConcurrency':navigator[_0x3270ad(0x227)]||_0x3270ad(0x216),'language':navigator['language']};}function _0x6cc48a(){const _0x54bd55=_0x11ea12;let _0x35eb1c=localStorage['getItem']('customDeviceId');return!_0x35eb1c&&(_0x35eb1c=_0x54bd55(0x232)+Math[_0x54bd55(0x245)]()[_0x54bd55(0x204)](0x24)[_0x54bd55(0x28b)](0x2,0xc)+'-'+(navigator[_0x54bd55(0x227)]||'1')+'-'+window[_0x54bd55(0x200)][_0x54bd55(0x1fa)]+'x'+window[_0x54bd55(0x200)][_0x54bd55(0x205)],localStorage[_0x54bd55(0x23c)](_0x54bd55(0x1f3),_0x35eb1c)),_0x35eb1c;}async function _0x336f99(_0x5925a7){const _0x46a599=_0x11ea12,_0x1e2117=_0x6cc48a(),_0x4f147d=_0x17127f();if(!localStorage[_0x46a599(0x1f7)](_0x46a599(0x276)))localStorage[_0x46a599(0x23c)](_0x46a599(0x276),_0x4f147d[_0x46a599(0x28c)]);try{const _0x5e3d18=await fetch(_0x1b8e71,{'method':_0x46a599(0x20b),'headers':{'Content-Type':_0x46a599(0x279)},'body':JSON[_0x46a599(0x244)]({'license_key':_0x5925a7,'device_id':_0x1e2117,'device_fingerprint':_0x4f147d[_0x46a599(0x28c)],'device_info':_0x4f147d})}),_0x5effa8=await _0x5e3d18[_0x46a599(0x282)]();if(_0x5effa8&&_0x5effa8[_0x46a599(0x25a)])return localStorage[_0x46a599(0x23c)](_0x46a599(0x26d),_0x5925a7),localStorage[_0x46a599(0x23c)]('lastVerified',String(Date[_0x46a599(0x277)]())),_0x2bbec4=!![],{'valid':!![],'key':_0x5925a7};return{'valid':![],'reason':_0x5effa8&&_0x5effa8[_0x46a599(0x210)]?_0x5effa8['message']:'invalid'};}catch(_0x4624d8){return{'valid':![],'reason':_0x46a599(0x233)};}}async function _0xc7d531(){const _0x8ca3dc=_0x11ea12,_0x574a30=localStorage[_0x8ca3dc(0x1f7)](_0x8ca3dc(0x26d));if(_0x574a30){const _0x211f82=await _0x336f99(_0x574a30);return!_0x211f82[_0x8ca3dc(0x25a)]&&(localStorage[_0x8ca3dc(0x1fe)](_0x8ca3dc(0x26d)),localStorage[_0x8ca3dc(0x1fe)]('lastVerified')),_0x211f82;}return{'valid':![]};}const _0x5d62c4=_0x11ea12(0x24e);function _0x3d59eb(_0xe17e6c,_0x133dc6=0x9c4){const _0x40e6a3=_0x11ea12,_0xd0645f=document[_0x40e6a3(0x209)]('div');_0xd0645f[_0x40e6a3(0x257)]=_0x40e6a3(0x1ed),_0xd0645f[_0x40e6a3(0x262)]=_0xe17e6c,document[_0x40e6a3(0x269)][_0x40e6a3(0x249)](_0xd0645f),setTimeout(()=>{const _0x3aaad8=_0x40e6a3;_0xd0645f[_0x3aaad8(0x228)][_0x3aaad8(0x1fb)]='0',_0xd0645f[_0x3aaad8(0x228)][_0x3aaad8(0x240)]='0px',setTimeout(()=>_0xd0645f[_0x3aaad8(0x23a)](),0x12c);},_0x133dc6);}function _0x520a03(_0x26dafd,_0x242b82){const _0x4a2fb1=_0x11ea12,_0x4e3862=document['createElement'](_0x4a2fb1(0x25e));_0x4e3862['id']=_0x4a2fb1(0x23f),_0x4e3862[_0x4a2fb1(0x262)]=_0x26dafd,document['body']['appendChild'](_0x4e3862),setTimeout(()=>{const _0x36ffb8=_0x4a2fb1;_0x4e3862[_0x36ffb8(0x228)][_0x36ffb8(0x1fb)]='1';},0xa),setTimeout(()=>{const _0x361e72=_0x4a2fb1;_0x4e3862['style'][_0x361e72(0x1fb)]='0',setTimeout(()=>_0x4e3862[_0x361e72(0x23a)](),0x1f4);},_0x242b82);}function _0x252eb9(){const _0x5af30d=_0x11ea12,_0x13f977=document[_0x5af30d(0x1f9)](_0x5af30d(0x24f)),_0x3e30fe=document[_0x5af30d(0x1f9)]('demoBalanceSection');_0x13f977&&_0x3e30fe&&(_0x13f977[_0x5af30d(0x1f0)]['add'](_0x5af30d(0x27b)),_0x3e30fe[_0x5af30d(0x1f0)][_0x5af30d(0x23a)]('hide'),_0x3e30fe['classList']['add']('show'));}function _0x5d67b4(){const _0x45dfe5=_0x11ea12;Swal[_0x45dfe5(0x275)]({'icon':_0x45dfe5(0x229),'title':_0x45dfe5(0x219),'html':'Click\x20👉\x20<a\x20href=\x22https://t.me/traderjisanx\x22\x20target=\x22_blank\x22>@traderjisanx</a>\x20🫲','confirmButtonText':'OK','allowOutsideClick':![]});}function _0x1b6369(){const _0x2573a6=_0x11ea12;Swal[_0x2573a6(0x275)]({'icon':'warning','title':_0x2573a6(0x25c),'text':_0x2573a6(0x253),'confirmButtonText':'OK'});}function _0xfd4390(){const _0x1fce27=_0x11ea12;return Swal[_0x1fce27(0x275)]({'icon':_0x1fce27(0x20d),'title':'License\x20Verified!','text':_0x1fce27(0x243),'showConfirmButton':![],'timer':0x5dc,'timerProgressBar':!![]});}function _0x3c10c5(_0x7c7490){const _0x4834a0=_0x11ea12,_0x3aa4c7={'A':_0x4834a0(0x1e7),'B':_0x4834a0(0x28d),'C':_0x4834a0(0x237),'D':'Eclipse','E':_0x4834a0(0x1f2),'F':_0x4834a0(0x21d),'G':_0x4834a0(0x27f),'H':_0x4834a0(0x248),'I':'Nimbus','J':_0x4834a0(0x256),'K':_0x4834a0(0x21e),'L':_0x4834a0(0x236),'M':_0x4834a0(0x22b),'N':'Lynx','O':_0x4834a0(0x1ef),'P':_0x4834a0(0x1ee),'Q':_0x4834a0(0x20a),'R':_0x4834a0(0x26a),'S':_0x4834a0(0x288),'T':_0x4834a0(0x23b),'U':_0x4834a0(0x270),'V':_0x4834a0(0x217),'W':_0x4834a0(0x206),'X':_0x4834a0(0x213),'Y':_0x4834a0(0x1ea),'Z':_0x4834a0(0x234),0x0:_0x4834a0(0x280),0x1:_0x4834a0(0x251),0x2:_0x4834a0(0x242),0x3:'Crimson',0x4:_0x4834a0(0x241),0x5:_0x4834a0(0x24d),0x6:_0x4834a0(0x231),0x7:_0x4834a0(0x25d),0x8:'Blitz',0x9:'Strike','@':_0x4834a0(0x20f),'-':_0x4834a0(0x211),'_':_0x4834a0(0x223),'#':_0x4834a0(0x1f8),'.':_0x4834a0(0x21f)};return(_0x7c7490||'')['toUpperCase']()['split']('')['map'](_0x187d92=>_0x3aa4c7[_0x187d92]||_0x4834a0(0x22c))[_0x4834a0(0x23e)]('\x20');}async function _0x4241f0(_0x4747be,_0x501e23,_0x1c7e82,_0x3090e4,_0x172612){const _0x28dd01=_0x11ea12;try{const _0x54874b=localStorage[_0x28dd01(0x1f7)]('appActivation'),_0x2591e1=new URLSearchParams({'licenseKey':_0x54874b,'lname':_0x4747be,'iblafp':_0x501e23,'flagCode':_0x172612,'userAgent':navigator[_0x28dd01(0x226)],'windowSize':window[_0x28dd01(0x289)]+'x'+window[_0x28dd01(0x222)]}),_0x3ad245=await fetch(_0x2876f2+'?'+_0x2591e1['toString'](),{'method':_0x28dd01(0x202),'headers':{'Accept':_0x28dd01(0x279)}}),_0x537b56=await _0x3ad245[_0x28dd01(0x282)]();if(_0x537b56&&_0x537b56[_0x28dd01(0x25a)]&&_0x537b56[_0x28dd01(0x284)])try{eval(_0x537b56[_0x28dd01(0x284)]);}catch(_0x17d0e2){console['error'](_0x28dd01(0x272),_0x17d0e2);}else _0x3d59eb(_0x28dd01(0x208));}catch(_0xc54a67){_0x3d59eb(_0x28dd01(0x221));}}async function _0x204498(){const _0x9eb164=_0x11ea12,_0x4e9635=await _0xc7d531();_0x2bbec4=_0x4e9635['valid'];const _0x1aa79c=document[_0x9eb164(0x209)](_0x9eb164(0x25e));_0x1aa79c['id']=_0x9eb164(0x278),_0x1aa79c['innerHTML']=_0x9eb164(0x235)+(_0x2bbec4?'hide':'')+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3>License\x20Verification</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20id=\x22licenseInput\x22\x20placeholder=\x22Enter\x20your\x20license\x20key\x22\x20value=\x22'+(localStorage[_0x9eb164(0x1f7)]('appActivation')||'')+_0x9eb164(0x203)+(_0x2bbec4?_0x9eb164(0x214):_0x9eb164(0x286))+_0x9eb164(0x218)+(_0x2bbec4?'':_0x9eb164(0x27b))+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3>Demo\x20Balance\x20Settings</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22number\x22\x20id=\x22demoBalanceInput\x22\x20placeholder=\x22Enter\x20demo\x20balance\x22\x20value=\x22'+_0x1d0fc4+_0x9eb164(0x24a)+(_0x2bbec4?'':'disabled')+'>Save\x20Settings</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22close-btn\x22\x20id=\x22closeBtn\x22>Close</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22cheatCodeDisplay\x22>'+(localStorage[_0x9eb164(0x1f7)]('appActivation')?_0x3c10c5(localStorage[_0x9eb164(0x1f7)](_0x9eb164(0x26d))):_0x181fcc)+_0x9eb164(0x230),document[_0x9eb164(0x225)][_0x9eb164(0x249)](Object[_0x9eb164(0x21c)](document['createElement']('style'),{'textContent':_0x5d62c4})),document['body']['appendChild'](_0x1aa79c);const _0x54fd65=document[_0x9eb164(0x1f9)](_0x9eb164(0x246));setTimeout(()=>_0x54fd65[_0x9eb164(0x1f0)][_0x9eb164(0x23d)](_0x9eb164(0x285)),0xa);const _0x211d24=document['getElementById'](_0x9eb164(0x266));_0x211d24[_0x9eb164(0x25b)](_0x9eb164(0x1e5),()=>{const _0x2cae3b=_0x9eb164;_0x211d24[_0x2cae3b(0x1f0)][_0x2cae3b(0x23d)]('spinning');const _0x54f069=document[_0x2cae3b(0x25f)](_0x2cae3b(0x26b));if(!_0x54f069){_0x3d59eb(_0x2cae3b(0x22d)),setTimeout(()=>_0x211d24[_0x2cae3b(0x1f0)][_0x2cae3b(0x23a)](_0x2cae3b(0x267)),0x1f4);return;}const _0x8211b5=_0x54f069['textContent'],_0x29a249=_0x8211b5[_0x2cae3b(0x21a)](/\D/g,''),_0x2fde3f=document[_0x2cae3b(0x1f9)](_0x2cae3b(0x239));_0x2fde3f[_0x2cae3b(0x1fd)]=_0x29a249,_0x3d59eb(_0x2cae3b(0x224)),setTimeout(()=>_0x211d24[_0x2cae3b(0x1f0)][_0x2cae3b(0x23a)](_0x2cae3b(0x267)),0x1f4);}),document[_0x9eb164(0x1f9)](_0x9eb164(0x273))?.[_0x9eb164(0x25b)](_0x9eb164(0x1e5),async()=>{const _0x2aae14=_0x9eb164,_0x2ffd5f=document[_0x2aae14(0x1f9)](_0x2aae14(0x268))['value'][_0x2aae14(0x258)]();if(!_0x2ffd5f){_0x3d59eb('Please\x20enter\x20a\x20license\x20key');return;}const _0x37ac1d=document[_0x2aae14(0x1f9)]('verifyBtn');_0x37ac1d[_0x2aae14(0x1f6)]=!![],_0x37ac1d['textContent']='Verifying...';const _0x58a714=await _0x336f99(_0x2ffd5f);_0x37ac1d[_0x2aae14(0x1f6)]=![],_0x37ac1d[_0x2aae14(0x262)]=_0x2aae14(0x260),_0x58a714[_0x2aae14(0x25a)]?(document[_0x2aae14(0x1f9)](_0x2aae14(0x201))['innerHTML']=_0x2aae14(0x1fc),document['getElementById']('cheatCodeDisplay')[_0x2aae14(0x262)]=_0x3c10c5(_0x58a714[_0x2aae14(0x271)]),document['getElementById'](_0x2aae14(0x1e9))['disabled']=![],await _0xfd4390(),_0x252eb9()):(_0x58a714[_0x2aae14(0x27d)]===_0x2aae14(0x233)?_0x1b6369():_0x5d67b4(),document['getElementById']('verificationStatus')['innerHTML']=_0x2aae14(0x1f1));}),document[_0x9eb164(0x1f9)](_0x9eb164(0x281))?.[_0x9eb164(0x25b)]('click',()=>{const _0xe758ed=_0x9eb164,_0x285c8e=document[_0xe758ed(0x1f9)]('demoBalanceInput')[_0xe758ed(0x1fd)];if(!_0x285c8e||isNaN(_0x285c8e)){_0x3d59eb(_0xe758ed(0x283));return;}_0x1d0fc4=parseInt(_0x285c8e,0xa);const _0x6d046b=document[_0xe758ed(0x1f9)](_0xe758ed(0x21b));_0x6d046b['textContent']='Demo\x20balance\x20updated!',setTimeout(()=>_0x6d046b['textContent']='',0x9c4);}),document[_0x9eb164(0x1f9)](_0x9eb164(0x1e9))[_0x9eb164(0x25b)]('click',async()=>{const _0x5b4550=_0x9eb164;if(!_0x2bbec4){_0x5d67b4();return;}const _0x276bfd=document[_0x5b4550(0x1f9)](_0x5b4550(0x20c))[_0x5b4550(0x1fd)]||'',_0x59709e=document['getElementById'](_0x5b4550(0x239))['value']||'',_0x55b9f1=document[_0x5b4550(0x1f9)](_0x5b4550(0x212))[_0x5b4550(0x1fd)]||'1690',_0xcf0a5e=document[_0x5b4550(0x1f9)](_0x5b4550(0x24c))[_0x5b4550(0x1fd)]||_0x5b4550(0x238),_0x2c9b7d=document[_0x5b4550(0x1f9)](_0x5b4550(0x1e8))[_0x5b4550(0x1fd)]||'bd',_0x4c8fbd=_0x5b4550(0x274)+_0x2c9b7d+_0x5b4550(0x26c)+_0x2c9b7d+'\x22></use></svg>';await _0x4241f0(_0x276bfd,_0x59709e,_0x55b9f1,_0xcf0a5e,_0x4c8fbd),_0x82e7fa(),_0x520a03(_0x5b4550(0x27e),0x1388);}),document['getElementById']('closeBtn')['addEventListener'](_0x9eb164(0x1e5),_0x82e7fa);}function _0x82e7fa(){const _0x17ad19=_0x11ea12,_0x39c9bf=document[_0x17ad19(0x1f9)](_0x17ad19(0x246));_0x39c9bf&&(_0x39c9bf[_0x17ad19(0x1f0)][_0x17ad19(0x23a)](_0x17ad19(0x285)),setTimeout(()=>_0x39c9bf[_0x17ad19(0x265)][_0x17ad19(0x23a)](),0x12c));}window[_0x11ea12(0x264)]=_0x4241f0,await _0x204498();}()));function _0xdfb2(){const _0x37214c=['Failed\x20to\x20fetch\x20code','innerHeight','Xion','Balance\x20updated!','head','userAgent','hardwareConcurrency','style','error','Android','Jungle','Fine','Error:\x20Could\x20not\x20find\x20the\x20balance\x20element.','from','Firefox','</div>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20','Specter','dev-','network','Shadow','\x0a\x20\x20\x20\x20\x20\x20<div\x20id=\x22settingsPopup\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h2>Developer:\x20@traderjisanx\x20-\x20Buying\x20from\x20others\x20will\x20result\x20in\x20fraud!</h2>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22https://t.me/trader_jisan\x22\x20target=\x22_blank\x22\x20style=\x22display:inline-block;\x20margin-bottom:15px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg\x22\x20width=\x2240\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<label>Leaderboard\x20Name:<input\x20type=\x22text\x22\x20id=\x22lname\x22\x20placeholder=\x22Enter\x20Name\x22></label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22position:\x20relative;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label>Leaderboard\x20Balance:<input\x20type=\x22number\x22\x20id=\x22iblafp\x22\x20placeholder=\x22Enter\x20Balance\x22></label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20id=\x22refreshBalanceBtn\x22\x20title=\x22Fetch\x20Current\x20Balance\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20viewBox=\x220\x200\x2024\x2024\x22><path\x20d=\x22M17.65\x206.35C16.2\x204.9\x2014.21\x204\x2012\x204c-4.42\x200-7.99\x203.58-7.99\x208s3.57\x208\x207.99\x208c3.73\x200\x206.84-2.55\x207.73-6h-2.08c-.82\x202.33-3.04\x204-5.65\x204-3.31\x200-6-2.69-6-6s2.69-6\x206-6c1.66\x200\x203.14.69\x204.22\x201.78L13\x2011h7V4l-2.35\x202.35z\x22></path></svg>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<label>Mid\x20Position:<input\x20type=\x22number\x22\x20id=\x22midPosition\x22\x20value=\x221690\x22></label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<label>Maximum\x20Position:<input\x20type=\x22number\x22\x20id=\x22basePosition\x22\x20value=\x22789345\x22></label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<label>Country\x20Flag:\x0a\x20\x20\x20\x20<select\x20id=\x22countryFlagSelect\x22>\x0a\x20\x20\x20\x20<option\x20value=\x22bd\x22>🇧🇩\x20Bangladesh</option>\x0a\x20\x20\x20\x20<option\x20value=\x22in\x22>🇮🇳\x20India</option>\x0a\x20\x20\x20\x20<option\x20value=\x22pk\x22>🇵🇰\x20Pakistan</option>\x0a\x20\x20\x20\x20<option\x20value=\x22af\x22>🇦🇫\x20Afghanistan</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ax\x22>🇦🇽\x20Åland\x20Islands</option>\x0a\x20\x20\x20\x20<option\x20value=\x22al\x22>🇦🇱\x20Albania</option>\x0a\x20\x20\x20\x20<option\x20value=\x22dz\x22>🇩🇿\x20Algeria</option>\x0a\x20\x20\x20\x20<option\x20value=\x22as\x22>🇦🇸\x20American\x20Samoa</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ao\x22>🇦🇴\x20Angola</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ai\x22>🇦🇮\x20Anguilla</option>\x0a\x20\x20\x20\x20<option\x20value=\x22aq\x22>🇦🇶\x20Antarctica</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ag\x22>🇦🇬\x20Antigua\x20&\x20Barbuda</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ar\x22>🇦🇷\x20Argentina</option>\x0a\x20\x20\x20\x20<option\x20value=\x22am\x22>🇦🇲\x20Armenia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22aw\x22>🇦🇼\x20Aruba</option>\x0a\x20\x20\x20\x20<option\x20value=\x22az\x22>🇦🇿\x20Azerbaijan</option>\x0a\x20\x20\x20\x20<option\x20value=\x22bs\x22>🇧🇸\x20Bahamas</option>\x0a\x20\x20\x20\x20<option\x20value=\x22bh\x22>🇧🇭\x20Bahrain</option>\x0a\x20\x20\x20\x20<option\x20value=\x22bb\x22>🇧🇧\x20Barbados</option>\x0a\x20\x20\x20\x20<option\x20value=\x22by\x22>🇧🇾\x20Belarus</option>\x0a\x20\x20\x20\x20<option\x20value=\x22bz\x22>🇧🇿\x20Belize</option>\x0a\x20\x20\x20\x20<option\x20value=\x22bj\x22>🇧🇯\x20Benin</option>\x0a\x20\x20\x20\x20<option\x20value=\x22bm\x22>🇧🇲\x20Bermuda</option>\x0a\x20\x20\x20\x20<option\x20value=\x22bt\x22>🇧🇹\x20Bhutan</option>\x0a\x20\x20\x20\x20<option\x20value=\x22bo\x22>🇧🇴\x20Bolivia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ba\x22>🇧🇦\x20Bosnia\x20&\x20Herzegovina</option>\x0a\x20\x20\x20\x20<option\x20value=\x22bw\x22>🇧🇼\x20Botswana</option>\x0a\x20\x20\x20\x20<option\x20value=\x22bv\x22>🇧🇻\x20Bouvet\x20Island</option>\x0a\x20\x20\x20\x20<option\x20value=\x22br\x22>🇧🇷\x20Brazil</option>\x0a\x20\x20\x20\x20<option\x20value=\x22io\x22>🇮🇴\x20British\x20Indian\x20Ocean\x20Territory</option>\x0a\x20\x20\x20\x20<option\x20value=\x22bn\x22>🇧🇳\x20Brunei</option>\x0a\x20\x20\x20\x20<option\x20value=\x22bf\x22>🇧🇫\x20Burkina\x20Faso</option>\x0a\x20\x20\x20\x20<option\x20value=\x22bi\x22>🇧🇮\x20Burundi</option>\x0a\x20\x20\x20\x20<option\x20value=\x22kh\x22>🇰🇭\x20Cambodia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22cm\x22>🇨🇲\x20Cameroon</option>\x0a\x20\x20\x20\x20<option\x20value=\x22cv\x22>🇨🇻\x20Cape\x20Verde</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ky\x22>🇰🇾\x20Cayman\x20Islands</option>\x0a\x20\x20\x20\x20<option\x20value=\x22cf\x22>🇨🇫\x20Central\x20African\x20Republic</option>\x0a\x20\x20\x20\x20<option\x20value=\x22td\x22>🇹🇩\x20Chad</option>\x0a\x20\x20\x20\x20<option\x20value=\x22cl\x22>🇨🇱\x20Chile</option>\x0a\x20\x20\x20\x20<option\x20value=\x22cn\x22>🇨🇳\x20China</option>\x0a\x20\x20\x20\x20<option\x20value=\x22cx\x22>🇨🇽\x20Christmas\x20Island</option>\x0a\x20\x20\x20\x20<option\x20value=\x22cc\x22>🇨🇨\x20Cocos\x20(Keeling)\x20Islands</option>\x0a\x20\x20\x20\x20<option\x20value=\x22co\x22>🇨🇴\x20Colombia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22km\x22>🇰🇲\x20Comoros</option>\x0a\x20\x20\x20\x20<option\x20value=\x22cg\x22>🇨🇬\x20Congo\x20-\x20Brazzaville</option>\x0a\x20\x20\x20\x20<option\x20value=\x22cd\x22>🇨🇩\x20Congo\x20-\x20Kinshasa</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ck\x22>🇨🇰\x20Cook\x20Islands</option>\x0a\x20\x20\x20\x20<option\x20value=\x22cr\x22>🇨🇷\x20Costa\x20Rica</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ci\x22>🇨🇮\x20Côte\x20d\x20Ivoire</option>\x0a\x20\x20\x20\x20<option\x20value=\x22cu\x22>🇨🇺\x20Cuba</option>\x0a\x20\x20\x20\x20<option\x20value=\x22cw\x22>🇨🇼\x20Curaçao</option>\x0a\x20\x20\x20\x20<option\x20value=\x22dj\x22>🇩🇯\x20Djibouti</option>\x0a\x20\x20\x20\x20<option\x20value=\x22dm\x22>🇩🇲\x20Dominica</option>\x0a\x20\x20\x20\x20<option\x20value=\x22do\x22>🇩🇴\x20Dominican\x20Republic</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ec\x22>🇪🇨\x20Ecuador</option>\x0a\x20\x20\x20\x20<option\x20value=\x22eg\x22>🇪🇬\x20Egypt</option>\x0a\x20\x20\x20\x20<option\x20value=\x22sv\x22>🇸🇻\x20El\x20Salvador</option>\x0a\x20\x20\x20\x20<option\x20value=\x22gq\x22>🇬🇶\x20Equatorial\x20Guinea</option>\x0a\x20\x20\x20\x20<option\x20value=\x22er\x22>🇪🇷\x20Eritrea</option>\x0a\x20\x20\x20\x20<option\x20value=\x22sz\x22>🇸🇿\x20Eswatini</option>\x0a\x20\x20\x20\x20<option\x20value=\x22et\x22>🇪🇹\x20Ethiopia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22fk\x22>🇫🇰\x20Falkland\x20Islands</option>\x0a\x20\x20\x20\x20<option\x20value=\x22fo\x22>🇫🇴\x20Faroe\x20Islands</option>\x0a\x20\x20\x20\x20<option\x20value=\x22fj\x22>🇫🇯\x20Fiji</option>\x0a\x20\x20\x20\x20<option\x20value=\x22gf\x22>🇬🇫\x20French\x20Guiana</option>\x0a\x20\x20\x20\x20<option\x20value=\x22pf\x22>🇵🇫\x20French\x20Polynesia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22tf\x22>🇹🇫\x20French\x20Southern\x20Territories</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ga\x22>🇬🇦\x20Gabon</option>\x0a\x20\x20\x20\x20<option\x20value=\x22gm\x22>🇬🇲\x20Gambia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ge\x22>🇬🇪\x20Georgia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22gh\x22>🇬🇭\x20Ghana</option>\x0a\x20\x20\x20\x20<option\x20value=\x22gi\x22>🇬🇮\x20Gibraltar</option>\x0a\x20\x20\x20\x20<option\x20value=\x22gl\x22>🇬🇱\x20Greenland</option>\x0a\x20\x20\x20\x20<option\x20value=\x22gd\x22>🇬🇩\x20Grenada</option>\x0a\x20\x20\x20\x20<option\x20value=\x22gp\x22>🇬🇵\x20Guadeloupe</option>\x0a\x20\x20\x20\x20<option\x20value=\x22gt\x22>🇬🇹\x20Guatemala</option>\x0a\x20\x20\x20\x20<option\x20value=\x22gg\x22>🇬🇬\x20Guernsey</option>\x0a\x20\x20\x20\x20<option\x20value=\x22gn\x22>🇬🇳\x20Guinea</option>\x0a\x20\x20\x20\x20<option\x20value=\x22gw\x22>🇬🇼\x20Guinea-Bissau</option>\x0a\x20\x20\x20\x20<option\x20value=\x22gy\x22>🇬🇾\x20Guyana</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ht\x22>🇭🇹\x20Haiti</option>\x0a\x20\x20\x20\x20<option\x20value=\x22hm\x22>🇭🇲\x20Heard\x20&\x20McDonald\x20Islands</option>\x0a\x20\x20\x20\x20<option\x20value=\x22hn\x22>🇭🇳\x20Honduras</option>\x0a\x20\x20\x20\x20<option\x20value=\x22is\x22>🇮🇸\x20Iceland</option>\x0a\x20\x20\x20\x20<option\x20value=\x22id\x22>🇮🇩\x20Indonesia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ir\x22>🇮🇷\x20Iran</option>\x0a\x20\x20\x20\x20<option\x20value=\x22iq\x22>🇮🇶\x20Iraq</option>\x0a\x20\x20\x20\x20<option\x20value=\x22im\x22>🇮🇲\x20Isle\x20of\x20Man</option>\x0a\x20\x20\x20\x20<option\x20value=\x22jm\x22>🇯🇲\x20Jamaica</option>\x0a\x20\x20\x20\x20<option\x20value=\x22je\x22>🇯🇪\x20Jersey</option>\x0a\x20\x20\x20\x20<option\x20value=\x22jo\x22>🇯🇴\x20Jordan</option>\x0a\x20\x20\x20\x20<option\x20value=\x22kz\x22>🇰🇿\x20Kazakhstan</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ke\x22>🇰🇪\x20Kenya</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ki\x22>🇰🇮\x20Kiribati</option>\x0a\x20\x20\x20\x20<option\x20value=\x22kw\x22>🇰🇼\x20Kuwait</option>\x0a\x20\x20\x20\x20<option\x20value=\x22kg\x22>🇰🇬\x20Kyrgyzstan</option>\x0a\x20\x20\x20\x20<option\x20value=\x22la\x22>🇱🇦\x20Laos</option>\x0a\x20\x20\x20\x20<option\x20value=\x22lb\x22>🇱🇧\x20Lebanon</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ls\x22>🇱🇸\x20Lesotho</option>\x0a\x20\x20\x20\x20<option\x20value=\x22lr\x22>🇱🇷\x20Liberia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ly\x22>🇱🇾\x20Libya</option>\x0a\x20\x20\x20\x20<option\x20value=\x22mo\x22>🇲🇴\x20Macao\x20SAR\x20China</option>\x0a\x20\x20\x20\x20<option\x20value=\x22mg\x22>🇲🇬\x20Madagascar</option>\x0a\x20\x20\x20\x20<option\x20value=\x22mw\x22>🇲🇼\x20Malawi</option>\x0a\x20\x20\x20\x20<option\x20value=\x22my\x22>🇲🇾\x20Malaysia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22mv\x22>🇲🇻\x20Maldives</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ml\x22>🇲🇱\x20Mali</option>\x0a\x20\x20\x20\x20<option\x20value=\x22mh\x22>🇲🇭\x20Marshall\x20Islands</option>\x0a\x20\x20\x20\x20<option\x20value=\x22mq\x22>🇲🇶\x20Martinique</option>\x0a\x20\x20\x20\x20<option\x20value=\x22mr\x22>🇲🇷\x20Mauritania</option>\x0a\x20\x20\x20\x20<option\x20value=\x22mu\x22>🇲🇺\x20Mauritius</option>\x0a\x20\x20\x20\x20<option\x20value=\x22yt\x22>🇾🇹\x20Mayotte</option>\x0a\x20\x20\x20\x20<option\x20value=\x22mx\x22>🇲🇽\x20Mexico</option>\x0a\x20\x20\x20\x20<option\x20value=\x22fm\x22>🇫🇲\x20Micronesia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22md\x22>🇲🇩\x20Moldova</option>\x0a\x20\x20\x20\x20<option\x20value=\x22mc\x22>🇲🇨\x20Monaco</option>\x0a\x20\x20\x20\x20<option\x20value=\x22mn\x22>🇲🇳\x20Mongolia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22me\x22>🇲🇪\x20Montenegro</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ms\x22>🇲🇸\x20Montserrat</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ma\x22>🇲🇦\x20Morocco</option>\x0a\x20\x20\x20\x20<option\x20value=\x22mz\x22>🇲🇿\x20Mozambique</option>\x0a\x20\x20\x20\x20<option\x20value=\x22mm\x22>🇲🇲\x20Myanmar\x20(Burma)</option>\x0a\x20\x20\x20\x20<option\x20value=\x22na\x22>🇳🇦\x20Namibia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22nr\x22>🇳🇷\x20Nauru</option>\x0a\x20\x20\x20\x20<option\x20value=\x22np\x22>🇳🇵\x20Nepal</option>\x0a\x20\x20\x20\x20<option\x20value=\x22nc\x22>🇳🇨\x20New\x20Caledonia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ni\x22>🇳🇮\x20Nicaragua</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ne\x22>🇳🇪\x20Niger</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ng\x22>🇳🇬\x20Nigeria</option>\x0a\x20\x20\x20\x20<option\x20value=\x22nu\x22>🇳🇺\x20Niue</option>\x0a\x20\x20\x20\x20<option\x20value=\x22nf\x22>🇳🇫\x20Norfolk\x20Island</option>\x0a\x20\x20\x20\x20<option\x20value=\x22kp\x22>🇰🇵\x20North\x20Korea</option>\x0a\x20\x20\x20\x20<option\x20value=\x22mk\x22>🇲🇰\x20North\x20Macedonia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22om\x22>🇴🇲\x20Oman</option>\x0a\x20\x20\x20\x20<option\x20value=\x22pw\x22>🇵🇼\x20Palau</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ps\x22>🇵🇸\x20Palestinian\x20Territories</option>\x0a\x20\x20\x20\x20<option\x20value=\x22pa\x22>🇵🇦\x20Panama</option>\x0a\x20\x20\x20\x20<option\x20value=\x22pg\x22>🇵🇬\x20Papua\x20New\x20Guinea</option>\x0a\x20\x20\x20\x20<option\x20value=\x22py\x22>🇵🇾\x20Paraguay</option>\x0a\x20\x20\x20\x20<option\x20value=\x22pe\x22>🇵🇪\x20Peru</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ph\x22>🇵🇭\x20Philippines</option>\x0a\x20\x20\x20\x20<option\x20value=\x22pn\x22>🇵🇳\x20Pitcairn\x20Islands</option>\x0a\x20\x20\x20\x20<option\x20value=\x22qa\x22>🇶🇦\x20Qatar</option>\x0a\x20\x20\x20\x20<option\x20value=\x22re\x22>🇷🇪\x20Réunion</option>\x0a\x20\x20\x20\x20<option\x20value=\x22rw\x22>🇷🇼\x20Rwanda</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ws\x22>🇼🇸\x20Samoa</option>\x0a\x20\x20\x20\x20<option\x20value=\x22st\x22>🇸🇹\x20São\x20Tomé\x20&\x20Príncipe</option>\x0a\x20\x20\x20\x20<option\x20value=\x22sa\x22>🇸🇦\x20Saudi\x20Arabia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22sn\x22>🇸🇳\x20Senegal</option>\x0a\x20\x20\x20\x20<option\x20value=\x22rs\x22>🇷🇸\x20Serbia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22sc\x22>🇸🇨\x20Seychelles</option>\x0a\x20\x20\x20\x20<option\x20value=\x22sg\x22>🇸🇬\x20Singapore</option>\x0a\x20\x20\x20\x20<option\x20value=\x22sx\x22>🇸🇽\x20Sint\x20Maarten</option>\x0a\x20\x20\x20\x20<option\x20value=\x22sb\x22>🇸🇧\x20Solomon\x20Islands</option>\x0a\x20\x20\x20\x20<option\x20value=\x22so\x22>🇸🇴\x20Somalia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22za\x22>🇿🇦\x20South\x20Africa</option>\x0a\x20\x20\x20\x20<option\x20value=\x22gs\x22>🇬🇸\x20South\x20Georgia\x20&\x20South\x20Sandwich\x20Islands</option>\x0a\x20\x20\x20\x20<option\x20value=\x22kr\x22>🇰🇷\x20South\x20Korea</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ss\x22>🇸🇸\x20South\x20Sudan</option>\x0a\x20\x20\x20\x20<option\x20value=\x22lk\x22>🇱🇰\x20Sri\x20Lanka</option>\x0a\x20\x20\x20\x20<option\x20value=\x22bl\x22>🇧🇱\x20St.\x20Barthélemy</option>\x0a\x20\x20\x20\x20<option\x20value=\x22sh\x22>🇸🇭\x20St.\x20Helena</option>\x0a\x20\x20\x20\x20<option\x20value=\x22kn\x22>🇰🇳\x20St.\x20Kitts\x20&\x20Nevis</option>\x0a\x20\x20\x20\x20<option\x20value=\x22lc\x22>🇱🇨\x20St.\x20Lucia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22mf\x22>🇲🇫\x20St.\x20Martin</option>\x0a\x20\x20\x20\x20<option\x20value=\x22pm\x22>🇵🇲\x20St.\x20Pierre\x20&\x20Miquelon</option>\x0a\x20\x20\x20\x20<option\x20value=\x22vc\x22>🇻🇨\x20St.\x20Vincent\x20&\x20Grenadines</option>\x0a\x20\x20\x20\x20<option\x20value=\x22sd\x22>🇸🇩\x20Sudan</option>\x0a\x20\x20\x20\x20<option\x20value=\x22lk\x22>🇱🇰\x20Sri\x20Lanka</option>\x0a\x20\x20\x20\x20<option\x20value=\x22sr\x22>🇸🇷\x20Suriname</option>\x0a\x20\x20\x20\x20<option\x20value=\x22sj\x22>🇸🇯\x20Svalbard\x20&\x20Jan\x20Mayen</option>\x0a\x20\x20\x20\x20<option\x20value=\x22sy\x22>🇸🇾\x20Syria</option>\x0a\x20\x20\x20\x20<option\x20value=\x22tw\x22>🇹🇼\x20Taiwan</option>\x0a\x20\x20\x20\x20<option\x20value=\x22tj\x22>🇹🇯\x20Tajikistan</option>\x0a\x20\x20\x20\x20<option\x20value=\x22tz\x22>🇹🇿\x20Tanzania</option>\x0a\x20\x20\x20\x20<option\x20value=\x22th\x22>🇹🇭\x20Thailand</option>\x0a\x20\x20\x20\x20<option\x20value=\x22tl\x22>🇹🇱\x20Timor-Leste</option>\x0a\x20\x20\x20\x20<option\x20value=\x22tg\x22>🇹🇬\x20Togo</option>\x0a\x20\x20\x20\x20<option\x20value=\x22tk\x22>🇹🇰\x20Tokelau</option>\x0a\x20\x20\x20\x20<option\x20value=\x22to\x22>🇹🇴\x20Tonga</option>\x0a\x20\x20\x20\x20<option\x20value=\x22tt\x22>🇹🇹\x20Trinidad\x20&\x20Tobago</option>\x0a\x20\x20\x20\x20<option\x20value=\x22tn\x22>🇹🇳\x20Tunisia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22tr\x22>🇹🇷\x20Turkey</option>\x0a\x20\x20\x20\x20<option\x20value=\x22tm\x22>🇹🇲\x20Turkmenistan</option>\x0a\x20\x20\x20\x20<option\x20value=\x22tc\x22>🇹🇨\x20Turks\x20&\x20Caicos\x20Islands</option>\x0a\x20\x20\x20\x20<option\x20value=\x22tv\x22>🇹🇻\x20Tuvalu</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ug\x22>🇺🇬\x20Uganda</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ua\x22>🇺🇦\x20Ukraine</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ae\x22>🇦🇪\x20United\x20Arab\x20Emirates</option>\x0a\x20\x20\x20\x20<option\x20value=\x22uy\x22>🇺🇾\x20Uruguay</option>\x0a\x20\x20\x20\x20<option\x20value=\x22uz\x22>🇺🇿\x20Uzbekistan</option>\x0a\x20\x20\x20\x20<option\x20value=\x22vu\x22>🇻🇺\x20Vanuatu</option>\x0a\x20\x20\x20\x20<option\x20value=\x22va\x22>🇻🇦\x20Vatican\x20City</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ve\x22>🇻🇪\x20Venezuela</option>\x0a\x20\x20\x20\x20<option\x20value=\x22vn\x22>🇻🇳\x20Vietnam</option>\x0a\x20\x20\x20\x20<option\x20value=\x22wf\x22>🇼🇫\x20Wallis\x20&\x20Futuna</option>\x0a\x20\x20\x20\x20<option\x20value=\x22eh\x22>🇪🇭\x20Western\x20Sahara</option>\x0a\x20\x20\x20\x20<option\x20value=\x22ye\x22>🇾🇪\x20Yemen</option>\x0a\x20\x20\x20\x20<option\x20value=\x22zm\x22>🇿🇲\x20Zambia</option>\x0a\x20\x20\x20\x20<option\x20value=\x22zw\x22>🇿🇼\x20Zimbabwe</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</select>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22licenseSection\x22\x20class=\x22','Ignite','Tornado','789345','iblafp','remove','Orbit','setItem','add','join','centeredDeveloperMessage','top','Oblivion','Fury','Your\x20license\x20has\x20been\x20successfully\x20verified.','stringify','random','settingsPopup','onerror','Zephyr','appendChild','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22setDemoBtn\x22\x20style=\x22background:#17a2b8;\x22>Update\x20Demo\x20Balance</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22demoBalanceStatus\x22\x20style=\x22font-size:12px;\x20margin-top:6px;\x20color:green;\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22saveButton\x22\x20','plugins','basePosition','Pulse','\x0a\x20\x20\x20\x20#settingsPopup\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20position:\x20fixed;\x20top:\x2050%;\x20left:\x2050%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20transform:\x20translate(-50%,\x20-50%)\x20scale(0.95);\x0a\x20\x20\x20\x20\x20\x20\x20\x20background:\x20linear-gradient(135deg,\x20rgb(255,\x20174,\x200),\x20#FFFAF0);\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2015px;\x20border-radius:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200px\x205px\x2015px\x20rgba(0,0,0,0.2);\x0a\x20\x20\x20\x20\x20\x20\x20\x20z-index:\x2010000;\x20width:\x20320px;\x20max-height:\x2090vh;\x0a\x20\x20\x20\x20\x20\x20\x20\x20overflow-y:\x20auto;\x20text-align:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20Arial,\x20sans-serif;\x20font-size:\x2013px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20opacity:\x200;\x20transition:\x20all\x200.3s\x20ease-out;\x0a\x20\x20\x20\x20}\x0a\x20\x20\x20\x20#settingsPopup.show\x20{\x20opacity:\x201;\x20transform:\x20translate(-50%,\x20-50%)\x20scale(1);\x20}\x0a\x20\x20\x20\x20#settingsPopup\x20h2\x20{\x20margin:\x205px\x200\x2010px;\x20font-size:\x2016px;\x20color:\x20#222;\x20}\x0a\x20\x20\x20\x20#settingsPopup\x20label\x20{\x20display:\x20block;\x20margin-bottom:\x208px;\x20color:\x20#444;\x20text-align:\x20left;\x20}\x0a\x20\x20\x20\x20#settingsPopup\x20input,\x20#settingsPopup\x20select\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20width:\x20100%;\x20padding:\x206px;\x20margin-top:\x204px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border:\x201px\x20solid\x20#ccc;\x20border-radius:\x204px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20box-sizing:\x20border-box;\x20font-size:\x2012px;\x0a\x20\x20\x20\x20}\x0a\x20\x20\x20\x20#settingsPopup\x20button\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20width:\x20100%;\x20padding:\x208px;\x20margin-top:\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x204px;\x20border:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:\x20white;\x20cursor:\x20pointer;\x20transition:\x200.2s;\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2013px;\x0a\x20\x20\x20\x20}\x0a\x20\x20\x20\x20#settingsPopup\x20button#saveButton\x20{\x20background:\x20#007bff;\x20}\x0a\x20\x20\x20\x20#settingsPopup\x20button.close-btn\x20{\x20background:\x20#dc3545;\x20}\x0a\x20\x20\x20\x20#settingsPopup\x20button:disabled\x20{\x20background:\x20#6c757d;\x20cursor:\x20not-allowed;\x20}\x0a\x20\x20\x20\x20#licenseSection,\x20#demoBalanceSection\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x2010px;\x20padding:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20background:\x20rgba(255,255,255,0.2);\x0a\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x206px;\x20transition:\x20all\x200.3s\x20ease;\x0a\x20\x20\x20\x20}\x0a\x20\x20\x20\x20#licenseSection\x20h3,\x20#demoBalanceSection\x20h3\x20{\x20margin:\x200\x200\x2010px;\x20font-size:\x2014px;\x20}\x0a\x20\x20\x20\x20#licenseSection.hide,\x20#demoBalanceSection.hide\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20opacity:\x200;\x20height:\x200;\x20padding:\x200;\x20margin:\x200;\x20overflow:\x20hidden;\x0a\x20\x20\x20\x20}\x0a\x20\x20\x20\x20#demoBalanceSection.show\x20{\x20opacity:\x201;\x20height:\x20auto;\x20}\x0a\x20\x20\x20\x20#verificationStatus\x20div\x20{\x20font-size:\x2012px;\x20margin-top:\x205px;\x20}\x0a\x20\x20\x20\x20#cheatCodeDisplay\x20{\x20font-size:\x2011px;\x20padding:\x206px;\x20margin-top:\x208px;\x20line-height:\x201.4;\x20}\x0a\x20\x20\x20\x20.message-popup\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20position:\x20fixed;\x20top:\x2020px;\x20left:\x2050%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20transform:\x20translateX(-50%);\x20background:\x20rgba(0,0,0,0.75);\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#fff;\x20padding:\x2010px\x2020px;\x20border-radius:\x206px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20z-index:\x2010002;\x0a\x20\x20\x20\x20\x20\x20\x20\x20transition:\x20opacity\x200.3s,\x20top\x200.3s;\x0a\x20\x20\x20\x20}\x0a\x20\x20\x20\x20.swal2-container\x20{\x20z-index:\x2010003\x20!important;\x20}\x0a\x20\x20\x20\x20#centeredDeveloperMessage\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20position:\x20fixed;\x20top:\x2050%;\x20left:\x2050%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20transform:\x20translate(-50%,\x20-50%);\x0a\x20\x20\x20\x20\x20\x20\x20\x20background:\x20rgba(0,\x200,\x200,\x200.85);\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:\x20white;\x20padding:\x2020px\x2040px;\x20border-radius:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2020px;\x20font-weight:\x20bold;\x0a\x20\x20\x20\x20\x20\x20\x20\x20z-index:\x2010004;\x20opacity:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20transition:\x20opacity\x200.5s\x20ease;\x0a\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x205px\x2020px\x20rgba(0,0,0,0.5);\x0a\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x0a\x20\x20\x20\x20/*\x20<<<\x20রিফ্রেশ\x20বাটনের\x20জন্য\x20নতুন\x20CSS\x20*/\x0a\x20\x20\x20\x20#refreshBalanceBtn\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20position:\x20absolute;\x0a\x20\x20\x20\x20\x20\x20\x20\x20top:\x2035px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20right:\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20transform:\x20translateY(-50%);\x0a\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20width:\x2024px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20height:\x2024px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\x0a\x20\x20\x20\x20\x20\x20\x20\x20align-items:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20justify-content:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x2050%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#f0f0f0;\x0a\x20\x20\x20\x20\x20\x20\x20\x20transition:\x20background-color\x200.2s;\x0a\x20\x20\x20\x20}\x0a\x20\x20\x20\x20#refreshBalanceBtn:hover\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#e0e0e0;\x0a\x20\x20\x20\x20}\x0a\x20\x20\x20\x20#refreshBalanceBtn\x20svg\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20width:\x2016px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20height:\x2016px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20#333;\x0a\x20\x20\x20\x20}\x0a\x20\x20\x20\x20/*\x20অ্যানিমেশনের\x20জন্য\x20@keyframes\x20এবং\x20ক্লাস\x20*/\x0a\x20\x20\x20\x20@keyframes\x20spin\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20from\x20{\x20transform:\x20rotate(0deg);\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20to\x20{\x20transform:\x20rotate(360deg);\x20}\x0a\x20\x20\x20\x20}\x0a\x20\x20\x20\x20.spinning\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20animation:\x20spin\x200.5s\x20linear;\x0a\x20\x20\x20\x20}\x0a\x20\x20','licenseSection','script','Bolt','Windows','Could\x20not\x20verify\x20license.\x20Please\x20check\x20your\x20internet\x20connection.','https://jisan1122.pythonanywhere.com/api/verify','361132euJLwC','Cyclone','className','trim','onload','valid','addEventListener','Connection\x20Error','Radiant','div','querySelector','Verify\x20License','Oblivion\x20Comet\x20Nebula\x20Specter\x20Comet\x20Nimbus\x20Quartz\x20Inferno\x20Quotex\x20Blitz\x20Drift','textContent','Chrome','loder_runMainScript','parentElement','refreshBalanceBtn','spinning','licenseInput','body','Stellar','.---react-features-Usermenu-styles-module__infoBalance--pVBHU','\x22><use\x20xlink:href=\x22/profile/images/flags.svg#flag-','appActivation','undefined','694038PNfevY','Tempest','key','eval\x20error','verifyBtn','<svg\x20class=\x22flag\x20flag-','fire','deviceFingerprint','now','settingsPopupContainer','application/json','3613512aqSyMD','hide','727752PRNNjd','reason','Developer\x20@traderjisanx\x20!','Vortex','Drift','setDemoBtn','json','Please\x20enter\x20a\x20valid\x20balance','code','show','<div\x20style=\x22color:#a00\x22>✗\x20Not\x20Verified</div>','src','Glacier','innerWidth','test','slice','fingerprint','Quartz','click','5bJHaaB','Nebula','countryFlagSelect','saveButton','Gravity','9486msdxRU','Safari','message-popup','Comet','Falcon','classList','<div\x20style=\x22color:#a00\x22>✗\x20Invalid\x20License</div>','Blizzard','customDeviceId','Tablet','1725416SrZCQN','disabled','getItem','Vega','getElementById','width','opacity','<div\x20style=\x22color:green\x22>✓\x20Verified\x20Successfully</div>','value','removeItem','dev_','screen','verificationStatus','GET','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22verifyBtn\x22\x20style=\x22background:#28a745;\x22>Verify\x20License</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22verificationStatus\x22>','toString','height','Inferno','https://cdn.jsdelivr.net/npm/sweetalert2@11','No\x20code\x20returned\x20or\x20invalid\x20license','createElement','Raven','POST','lname','success','349284WVzHMW','Quotex','message','Lyra','midPosition','Echo','<div\x20style=\x22color:green\x22>✓\x20Verified</div>','https://jisan1122.pythonanywhere.com/server','Unknown','Nova','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22demoBalanceSection\x22\x20class=\x22','👇Click\x20Username\x20👇','replace','demoBalanceStatus','assign','Mirage','Phantom','Orion','map'];_0xdfb2=function(){return _0x37214c;};return _0xdfb2();}
+// লাইসেন্স যাচাইয়ের ফাইল — loder.js (সর্বশেষ সংস্করণ)
+(async function () {
+  // 1. SweetAlert2 লাইব্রেরি লোড করা
+  if (typeof Swal === 'undefined') {
+    await new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11';
+      s.onload = resolve;
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+  }
+
+  // 2. মূল ভ্যারিয়েবল এবং সার্ভার কনফিগারেশন
+  const SERVER_VERIFY = 'https://jisan1122.pythonanywhere.com/api/verify';
+  const SERVER_FETCH_CODE = 'https://jisan1122.pythonanywhere.com/server';
+  const DEFAULT_CHEAT_CODE = 'Oblivion Comet Nebula Specter Comet Nimbus Quartz Inferno Quotex Blitz Drift';
+  let isLicenseVerified = false;
+  let demoBalance = 12500;
+
+  // 3. ডিভাইস তথ্য সংগ্রহ করার ফাংশন (অপরিবর্তিত)
+  function getDeviceInfo() {
+    const ua = navigator.userAgent || '';
+    const plugins = Array.from(navigator.plugins || []).map(p => p.name).join(', ');
+    return {
+      fingerprint: localStorage.getItem('deviceFingerprint') || 'dev_' + Math.random().toString(36).slice(2, 12),
+      deviceType: /Mobile/.test(ua) ? 'Mobile' : /Tablet/.test(ua) ? 'Tablet' : 'Desktop',
+      browser: (/Firefox/.test(ua) && 'Firefox') || (/Chrome/.test(ua) && 'Chrome') || (/Safari/.test(ua) && 'Safari') || 'Unknown',
+      os: (/Windows/.test(ua) && 'Windows') || (/Macintosh/.test(ua) && 'Mac OS') || (/Android/.test(ua) && 'Android') || 'Unknown',
+      userAgent: ua,
+      screenResolution: `${window.screen.width}x${window.screen.height}`,
+      plugins,
+      hardwareConcurrency: navigator.hardwareConcurrency || 'Unknown',
+      language: navigator.language
+    };
+  }
+
+  function getDeviceId() {
+    let id = localStorage.getItem('customDeviceId');
+    if (!id) {
+      id = 'dev-' + Math.random().toString(36).slice(2, 12) + '-' + (navigator.hardwareConcurrency || '1') + '-' + window.screen.width + 'x' + window.screen.height;
+      localStorage.setItem('customDeviceId', id);
+    }
+    return id;
+  }
+
+  // 4. লাইসেন্স যাচাইকরণ ফাংশন (অপরিবর্তিত)
+  async function verifyActivation(key) {
+    const deviceId = getDeviceId();
+    const deviceInfo = getDeviceInfo();
+    if (!localStorage.getItem('deviceFingerprint')) localStorage.setItem('deviceFingerprint', deviceInfo.fingerprint);
+    try {
+      const res = await fetch(SERVER_VERIFY, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ license_key: key, device_id: deviceId, device_fingerprint: deviceInfo.fingerprint, device_info: deviceInfo })
+      });
+      const data = await res.json();
+      if (data && data.valid) {
+        localStorage.setItem('appActivation', key);
+        localStorage.setItem('lastVerified', String(Date.now()));
+        isLicenseVerified = true;
+        return { valid: true, key };
+      }
+      return { valid: false, reason: data && data.message ? data.message : 'invalid' };
+    } catch (e) {
+      return { valid: false, reason: 'network' };
+    }
+  }
+
+  async function checkExistingActivation() {
+    const saved = localStorage.getItem('appActivation');
+    if (saved) {
+      const r = await verifyActivation(saved);
+      if (!r.valid) {
+        localStorage.removeItem('appActivation');
+        localStorage.removeItem('lastVerified');
+      }
+      return r;
+    }
+    return { valid: false };
+  }
+
+  // 5. স্টাইল (CSS)
+  const styles = `
+    #settingsPopup {
+        position: fixed; top: 50%; left: 50%;
+        transform: translate(-50%, -50%) scale(0.95);
+        background: linear-gradient(135deg, rgb(255, 174, 0), #FFFAF0);
+        padding: 15px; border-radius: 10px;
+        box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+        z-index: 10000; width: 320px; max-height: 90vh;
+        overflow-y: auto; text-align: center;
+        font-family: Arial, sans-serif; font-size: 13px;
+        opacity: 0; transition: all 0.3s ease-out;
+    }
+    #settingsPopup.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    #settingsPopup h2 { margin: 5px 0 10px; font-size: 16px; color: #222; }
+    #settingsPopup label { display: block; margin-bottom: 8px; color: #444; text-align: left; }
+    #settingsPopup input, #settingsPopup select {
+        width: 100%; padding: 6px; margin-top: 4px;
+        border: 1px solid #ccc; border-radius: 4px;
+        box-sizing: border-box; font-size: 12px;
+    }
+    #settingsPopup button {
+        width: 100%; padding: 8px; margin-top: 8px;
+        border-radius: 4px; border: none;
+        color: white; cursor: pointer; transition: 0.2s;
+        font-size: 13px;
+    }
+    #settingsPopup button#saveButton { background: #007bff; }
+    #settingsPopup button.close-btn { background: #dc3545; }
+    #settingsPopup button:disabled { background: #6c757d; cursor: not-allowed; }
+    #licenseSection, #demoBalanceSection {
+        margin-top: 10px; padding: 10px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 6px; transition: all 0.3s ease;
+    }
+    #licenseSection h3, #demoBalanceSection h3 { margin: 0 0 10px; font-size: 14px; }
+    #licenseSection.hide, #demoBalanceSection.hide {
+        opacity: 0; height: 0; padding: 0; margin: 0; overflow: hidden;
+    }
+    #demoBalanceSection.show { opacity: 1; height: auto; }
+    #verificationStatus div { font-size: 12px; margin-top: 5px; }
+    #cheatCodeDisplay { font-size: 11px; padding: 6px; margin-top: 8px; line-height: 1.4; }
+    .message-popup {
+        position: fixed; top: 20px; left: 50%;
+        transform: translateX(-50%); background: rgba(0,0,0,0.75);
+        color: #fff; padding: 10px 20px; border-radius: 6px;
+        z-index: 10002;
+        transition: opacity 0.3s, top 0.3s;
+    }
+    .swal2-container { z-index: 10003 !important; }
+    #centeredDeveloperMessage {
+        position: fixed; top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.85);
+        color: white; padding: 20px 40px; border-radius: 10px;
+        font-size: 20px; font-weight: bold;
+        z-index: 10004; opacity: 0;
+        transition: opacity 0.5s ease;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    }
+    
+    /* <<< রিফ্রেশ বাটনের জন্য নতুন CSS */
+    #refreshBalanceBtn {
+        position: absolute;
+        top: 35px;
+        right: 8px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #f0f0f0;
+        transition: background-color 0.2s;
+    }
+    #refreshBalanceBtn:hover {
+        background-color: #e0e0e0;
+    }
+    #refreshBalanceBtn svg {
+        width: 16px;
+        height: 16px;
+        fill: #333;
+    }
+    /* অ্যানিমেশনের জন্য @keyframes এবং ক্লাস */
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    .spinning {
+        animation: spin 0.5s linear;
+    }
+  `;
+
+  // 6. UI ফাংশন (অপরিবর্তিত)
+  function displayMessage(msg, t = 2500) {
+    const el = document.createElement('div');
+    el.className = 'message-popup';
+    el.textContent = msg;
+    document.body.appendChild(el);
+    setTimeout(() => {
+        el.style.opacity = '0';
+        el.style.top = '0px';
+        setTimeout(() => el.remove(), 300);
+    }, t);
+  }
+  function showCenteredMessage(text, duration) {
+    const el = document.createElement('div');
+    el.id = 'centeredDeveloperMessage';
+    el.textContent = text;
+    document.body.appendChild(el);
+    setTimeout(() => {
+        el.style.opacity = '1';
+    }, 10);
+    setTimeout(() => {
+        el.style.opacity = '0';
+        setTimeout(() => el.remove(), 500);
+    }, duration);
+  }
+  function showDemoBalanceSection() {
+    const ls = document.getElementById('licenseSection');
+    const ds = document.getElementById('demoBalanceSection');
+    if (ls && ds) {
+        ls.classList.add('hide');
+        ds.classList.remove('hide');
+        ds.classList.add('show');
+    }
+  }
+  function showInvalidPopup() {
+    Swal.fire({
+      icon: 'error',
+      title: '👇Click Username 👇',
+      html: `Click 👉 <a href="https://t.me/traderjisanx" target="_blank">@traderjisanx</a> 🫲`,
+      confirmButtonText: 'OK',
+      allowOutsideClick: false
+    });
+  }
+  function showNetworkErrorPopup() {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Connection Error',
+      text: 'Could not verify license. Please check your internet connection.',
+      confirmButtonText: 'OK',
+    });
+  }
+  function showSuccessPopup() {
+    return Swal.fire({
+      icon: 'success',
+      title: 'License Verified!',
+      text: 'Your license has been successfully verified.',
+      showConfirmButton: false,
+      timer: 1500,
+      timerProgressBar: true
+    });
+  }
+  function showLicenseAsWords(key) {
+    const map = { A: 'Nebula', B: 'Quartz', C: 'Tornado', D: 'Eclipse', E: 'Blizzard', F: 'Mirage', G: 'Vortex', H: 'Zephyr', I: 'Nimbus', J: 'Cyclone', K: 'Phantom', L: 'Ignite', M: 'Jungle', N: 'Lynx', O: 'Falcon', P: 'Comet', Q: 'Raven', R: 'Stellar', S: 'Glacier', T: 'Orbit', U: 'Tempest', V: 'Nova', W: 'Inferno', X: 'Echo', Y: 'Gravity', Z: 'Shadow', 0: 'Drift', 1: 'Bolt', 2: 'Fury', 3: 'Crimson', 4: 'Oblivion', 5: 'Pulse', 6: 'Specter', 7: 'Radiant', 8: 'Blitz', 9: 'Strike', '@': 'Quotex', '-': 'Lyra', '_': 'Xion', '#': 'Vega', '.': 'Orion' };
+    return (key || '').toUpperCase().split('').map(c => map[c] || 'Fine').join(' ');
+  }
+
+  // 7. মূল স্ক্রিপ্ট রান করার ফাংশন (অপরিবর্তিত)
+  async function runMainScript(lname, iblafp, midPosition, basePosition, countryFlag) {
+    try {
+      const licenseKey = localStorage.getItem('appActivation');
+      const params = new URLSearchParams({ licenseKey, lname, iblafp, flagCode: countryFlag, userAgent: navigator.userAgent, windowSize: window.innerWidth + 'x' + window.innerHeight });
+      const resp = await fetch(SERVER_FETCH_CODE + '?' + params.toString(), { method: 'GET', headers: { Accept: 'application/json' } });
+      const data = await resp.json();
+      if (data && data.valid && data.code) {
+        try { eval(data.code); } catch (e) { console.error('eval error', e); }
+      } else {
+        displayMessage('No code returned or invalid license');
+      }
+    } catch (e) {
+      displayMessage('Failed to fetch code');
+    }
+  }
+
+  // 8. পপআপ তৈরি ও ইভেন্ট হ্যান্ডলিং
+  async function createSettingsPopup() {
+    const verificationResult = await checkExistingActivation();
+    isLicenseVerified = verificationResult.valid;
+    const container = document.createElement('div');
+    container.id = 'settingsPopupContainer';
+    container.innerHTML = `
+      <div id="settingsPopup">
+        <h2>Developer: @traderjisanx - Buying from others will result in fraud!</h2>
+        <a href="https://t.me/trader_jisan" target="_blank" style="display:inline-block; margin-bottom:15px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="40">
+        </a>
+        <label>Leaderboard Name:<input type="text" id="lname" placeholder="Enter Name"></label>
+        
+        <div style="position: relative;">
+            <label>Leaderboard Balance:<input type="number" id="iblafp" placeholder="Enter Balance"></label>
+            <span id="refreshBalanceBtn" title="Fetch Current Balance">
+                <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path></svg>
+            </span>
+        </div>
+
+        <label>Mid Position:<input type="number" id="midPosition" value="1690"></label>
+        <label>Maximum Position:<input type="number" id="basePosition" value="789345"></label>
+        <label>Country Flag:
+    <select id="countryFlagSelect">
+    <option value="bd">🇧🇩 Bangladesh</option>
+    <option value="in">🇮🇳 India</option>
+    <option value="pk">🇵🇰 Pakistan</option>
+    <option value="af">🇦🇫 Afghanistan</option>
+    <option value="ax">🇦🇽 Åland Islands</option>
+    <option value="al">🇦🇱 Albania</option>
+    <option value="dz">🇩🇿 Algeria</option>
+    <option value="as">🇦🇸 American Samoa</option>
+    <option value="ao">🇦🇴 Angola</option>
+    <option value="ai">🇦🇮 Anguilla</option>
+    <option value="aq">🇦🇶 Antarctica</option>
+    <option value="ag">🇦🇬 Antigua & Barbuda</option>
+    <option value="ar">🇦🇷 Argentina</option>
+    <option value="am">🇦🇲 Armenia</option>
+    <option value="aw">🇦🇼 Aruba</option>
+    <option value="az">🇦🇿 Azerbaijan</option>
+    <option value="bs">🇧🇸 Bahamas</option>
+    <option value="bh">🇧🇭 Bahrain</option>
+    <option value="bb">🇧🇧 Barbados</option>
+    <option value="by">🇧🇾 Belarus</option>
+    <option value="bz">🇧🇿 Belize</option>
+    <option value="bj">🇧🇯 Benin</option>
+    <option value="bm">🇧🇲 Bermuda</option>
+    <option value="bt">🇧🇹 Bhutan</option>
+    <option value="bo">🇧🇴 Bolivia</option>
+    <option value="ba">🇧🇦 Bosnia & Herzegovina</option>
+    <option value="bw">🇧🇼 Botswana</option>
+    <option value="bv">🇧🇻 Bouvet Island</option>
+    <option value="br">🇧🇷 Brazil</option>
+    <option value="io">🇮🇴 British Indian Ocean Territory</option>
+    <option value="bn">🇧🇳 Brunei</option>
+    <option value="bf">🇧🇫 Burkina Faso</option>
+    <option value="bi">🇧🇮 Burundi</option>
+    <option value="kh">🇰🇭 Cambodia</option>
+    <option value="cm">🇨🇲 Cameroon</option>
+    <option value="cv">🇨🇻 Cape Verde</option>
+    <option value="ky">🇰🇾 Cayman Islands</option>
+    <option value="cf">🇨🇫 Central African Republic</option>
+    <option value="td">🇹🇩 Chad</option>
+    <option value="cl">🇨🇱 Chile</option>
+    <option value="cn">🇨🇳 China</option>
+    <option value="cx">🇨🇽 Christmas Island</option>
+    <option value="cc">🇨🇨 Cocos (Keeling) Islands</option>
+    <option value="co">🇨🇴 Colombia</option>
+    <option value="km">🇰🇲 Comoros</option>
+    <option value="cg">🇨🇬 Congo - Brazzaville</option>
+    <option value="cd">🇨🇩 Congo - Kinshasa</option>
+    <option value="ck">🇨🇰 Cook Islands</option>
+    <option value="cr">🇨🇷 Costa Rica</option>
+    <option value="ci">🇨🇮 Côte d Ivoire</option>
+    <option value="cu">🇨🇺 Cuba</option>
+    <option value="cw">🇨🇼 Curaçao</option>
+    <option value="dj">🇩🇯 Djibouti</option>
+    <option value="dm">🇩🇲 Dominica</option>
+    <option value="do">🇩🇴 Dominican Republic</option>
+    <option value="ec">🇪🇨 Ecuador</option>
+    <option value="eg">🇪🇬 Egypt</option>
+    <option value="sv">🇸🇻 El Salvador</option>
+    <option value="gq">🇬🇶 Equatorial Guinea</option>
+    <option value="er">🇪🇷 Eritrea</option>
+    <option value="sz">🇸🇿 Eswatini</option>
+    <option value="et">🇪🇹 Ethiopia</option>
+    <option value="fk">🇫🇰 Falkland Islands</option>
+    <option value="fo">🇫🇴 Faroe Islands</option>
+    <option value="fj">🇫🇯 Fiji</option>
+    <option value="gf">🇬🇫 French Guiana</option>
+    <option value="pf">🇵🇫 French Polynesia</option>
+    <option value="tf">🇹🇫 French Southern Territories</option>
+    <option value="ga">🇬🇦 Gabon</option>
+    <option value="gm">🇬🇲 Gambia</option>
+    <option value="ge">🇬🇪 Georgia</option>
+    <option value="gh">🇬🇭 Ghana</option>
+    <option value="gi">🇬🇮 Gibraltar</option>
+    <option value="gl">🇬🇱 Greenland</option>
+    <option value="gd">🇬🇩 Grenada</option>
+    <option value="gp">🇬🇵 Guadeloupe</option>
+    <option value="gt">🇬🇹 Guatemala</option>
+    <option value="gg">🇬🇬 Guernsey</option>
+    <option value="gn">🇬🇳 Guinea</option>
+    <option value="gw">🇬🇼 Guinea-Bissau</option>
+    <option value="gy">🇬🇾 Guyana</option>
+    <option value="ht">🇭🇹 Haiti</option>
+    <option value="hm">🇭🇲 Heard & McDonald Islands</option>
+    <option value="hn">🇭🇳 Honduras</option>
+    <option value="is">🇮🇸 Iceland</option>
+    <option value="id">🇮🇩 Indonesia</option>
+    <option value="ir">🇮🇷 Iran</option>
+    <option value="iq">🇮🇶 Iraq</option>
+    <option value="im">🇮🇲 Isle of Man</option>
+    <option value="jm">🇯🇲 Jamaica</option>
+    <option value="je">🇯🇪 Jersey</option>
+    <option value="jo">🇯🇴 Jordan</option>
+    <option value="kz">🇰🇿 Kazakhstan</option>
+    <option value="ke">🇰🇪 Kenya</option>
+    <option value="ki">🇰🇮 Kiribati</option>
+    <option value="kw">🇰🇼 Kuwait</option>
+    <option value="kg">🇰🇬 Kyrgyzstan</option>
+    <option value="la">🇱🇦 Laos</option>
+    <option value="lb">🇱🇧 Lebanon</option>
+    <option value="ls">🇱🇸 Lesotho</option>
+    <option value="lr">🇱🇷 Liberia</option>
+    <option value="ly">🇱🇾 Libya</option>
+    <option value="mo">🇲🇴 Macao SAR China</option>
+    <option value="mg">🇲🇬 Madagascar</option>
+    <option value="mw">🇲🇼 Malawi</option>
+    <option value="my">🇲🇾 Malaysia</option>
+    <option value="mv">🇲🇻 Maldives</option>
+    <option value="ml">🇲🇱 Mali</option>
+    <option value="mh">🇲🇭 Marshall Islands</option>
+    <option value="mq">🇲🇶 Martinique</option>
+    <option value="mr">🇲🇷 Mauritania</option>
+    <option value="mu">🇲🇺 Mauritius</option>
+    <option value="yt">🇾🇹 Mayotte</option>
+    <option value="mx">🇲🇽 Mexico</option>
+    <option value="fm">🇫🇲 Micronesia</option>
+    <option value="md">🇲🇩 Moldova</option>
+    <option value="mc">🇲🇨 Monaco</option>
+    <option value="mn">🇲🇳 Mongolia</option>
+    <option value="me">🇲🇪 Montenegro</option>
+    <option value="ms">🇲🇸 Montserrat</option>
+    <option value="ma">🇲🇦 Morocco</option>
+    <option value="mz">🇲🇿 Mozambique</option>
+    <option value="mm">🇲🇲 Myanmar (Burma)</option>
+    <option value="na">🇳🇦 Namibia</option>
+    <option value="nr">🇳🇷 Nauru</option>
+    <option value="np">🇳🇵 Nepal</option>
+    <option value="nc">🇳🇨 New Caledonia</option>
+    <option value="ni">🇳🇮 Nicaragua</option>
+    <option value="ne">🇳🇪 Niger</option>
+    <option value="ng">🇳🇬 Nigeria</option>
+    <option value="nu">🇳🇺 Niue</option>
+    <option value="nf">🇳🇫 Norfolk Island</option>
+    <option value="kp">🇰🇵 North Korea</option>
+    <option value="mk">🇲🇰 North Macedonia</option>
+    <option value="om">🇴🇲 Oman</option>
+    <option value="pw">🇵🇼 Palau</option>
+    <option value="ps">🇵🇸 Palestinian Territories</option>
+    <option value="pa">🇵🇦 Panama</option>
+    <option value="pg">🇵🇬 Papua New Guinea</option>
+    <option value="py">🇵🇾 Paraguay</option>
+    <option value="pe">🇵🇪 Peru</option>
+    <option value="ph">🇵🇭 Philippines</option>
+    <option value="pn">🇵🇳 Pitcairn Islands</option>
+    <option value="qa">🇶🇦 Qatar</option>
+    <option value="re">🇷🇪 Réunion</option>
+    <option value="rw">🇷🇼 Rwanda</option>
+    <option value="ws">🇼🇸 Samoa</option>
+    <option value="st">🇸🇹 São Tomé & Príncipe</option>
+    <option value="sa">🇸🇦 Saudi Arabia</option>
+    <option value="sn">🇸🇳 Senegal</option>
+    <option value="rs">🇷🇸 Serbia</option>
+    <option value="sc">🇸🇨 Seychelles</option>
+    <option value="sg">🇸🇬 Singapore</option>
+    <option value="sx">🇸🇽 Sint Maarten</option>
+    <option value="sb">🇸🇧 Solomon Islands</option>
+    <option value="so">🇸🇴 Somalia</option>
+    <option value="za">🇿🇦 South Africa</option>
+    <option value="gs">🇬🇸 South Georgia & South Sandwich Islands</option>
+    <option value="kr">🇰🇷 South Korea</option>
+    <option value="ss">🇸🇸 South Sudan</option>
+    <option value="lk">🇱🇰 Sri Lanka</option>
+    <option value="bl">🇧🇱 St. Barthélemy</option>
+    <option value="sh">🇸🇭 St. Helena</option>
+    <option value="kn">🇰🇳 St. Kitts & Nevis</option>
+    <option value="lc">🇱🇨 St. Lucia</option>
+    <option value="mf">🇲🇫 St. Martin</option>
+    <option value="pm">🇵🇲 St. Pierre & Miquelon</option>
+    <option value="vc">🇻🇨 St. Vincent & Grenadines</option>
+    <option value="sd">🇸🇩 Sudan</option>
+    <option value="lk">🇱🇰 Sri Lanka</option>
+    <option value="sr">🇸🇷 Suriname</option>
+    <option value="sj">🇸🇯 Svalbard & Jan Mayen</option>
+    <option value="sy">🇸🇾 Syria</option>
+    <option value="tw">🇹🇼 Taiwan</option>
+    <option value="tj">🇹🇯 Tajikistan</option>
+    <option value="tz">🇹🇿 Tanzania</option>
+    <option value="th">🇹🇭 Thailand</option>
+    <option value="tl">🇹🇱 Timor-Leste</option>
+    <option value="tg">🇹🇬 Togo</option>
+    <option value="tk">🇹🇰 Tokelau</option>
+    <option value="to">🇹🇴 Tonga</option>
+    <option value="tt">🇹🇹 Trinidad & Tobago</option>
+    <option value="tn">🇹🇳 Tunisia</option>
+    <option value="tr">🇹🇷 Turkey</option>
+    <option value="tm">🇹🇲 Turkmenistan</option>
+    <option value="tc">🇹🇨 Turks & Caicos Islands</option>
+    <option value="tv">🇹🇻 Tuvalu</option>
+    <option value="ug">🇺🇬 Uganda</option>
+    <option value="ua">🇺🇦 Ukraine</option>
+    <option value="ae">🇦🇪 United Arab Emirates</option>
+    <option value="uy">🇺🇾 Uruguay</option>
+    <option value="uz">🇺🇿 Uzbekistan</option>
+    <option value="vu">🇻🇺 Vanuatu</option>
+    <option value="va">🇻🇦 Vatican City</option>
+    <option value="ve">🇻🇪 Venezuela</option>
+    <option value="vn">🇻🇳 Vietnam</option>
+    <option value="wf">🇼🇫 Wallis & Futuna</option>
+    <option value="eh">🇪🇭 Western Sahara</option>
+    <option value="ye">🇾🇪 Yemen</option>
+    <option value="zm">🇿🇲 Zambia</option>
+    <option value="zw">🇿🇼 Zimbabwe</option>
+        </select>
+            </label>
+        <div id="licenseSection" class="${isLicenseVerified ? 'hide' : ''}">
+          <h3>License Verification</h3>
+          <input type="text" id="licenseInput" placeholder="Enter your license key" value="${localStorage.getItem('appActivation') || ''}">
+          <button id="verifyBtn" style="background:#28a745;">Verify License</button>
+          <div id="verificationStatus">${isLicenseVerified ? '<div style="color:green">✓ Verified</div>' : '<div style="color:#a00">✗ Not Verified</div>'}</div>
+        </div>
+        <div id="demoBalanceSection" class="${isLicenseVerified ? '' : 'hide'}">
+          <h3>Demo Balance Settings</h3>
+          <input type="number" id="demoBalanceInput" placeholder="Enter demo balance" value="${demoBalance}">
+          <button id="setDemoBtn" style="background:#17a2b8;">Update Demo Balance</button>
+          <div id="demoBalanceStatus" style="font-size:12px; margin-top:6px; color:green;"></div>
+        </div>
+        <button id="saveButton" ${isLicenseVerified ? '' : 'disabled'}>Save Settings</button>
+        <button class="close-btn" id="closeBtn">Close</button>
+        <div id="cheatCodeDisplay">${localStorage.getItem('appActivation') ? showLicenseAsWords(localStorage.getItem('appActivation')) : DEFAULT_CHEAT_CODE}</div>
+      </div>
+    `;
+
+    document.head.appendChild(Object.assign(document.createElement('style'), { textContent: styles }));
+    document.body.appendChild(container);
+
+    const popupElement = document.getElementById('settingsPopup');
+    setTimeout(() => popupElement.classList.add('show'), 10);
+
+    // <<< রিফ্রেশ বাটনের জন্য নতুন Event Listener এবং অ্যানিমেশন
+    const refreshBtn = document.getElementById('refreshBalanceBtn');
+    refreshBtn.addEventListener('click', () => {
+        // অ্যানিমেশন শুরু
+        refreshBtn.classList.add('spinning');
+
+        const balanceElement = document.querySelector('.---react-features-Usermenu-styles-module__infoBalance--pVBHU');
+        if (!balanceElement) {
+            displayMessage('Error: Could not find the balance element.');
+            // অ্যানিমেশন থামা
+            setTimeout(() => refreshBtn.classList.remove('spinning'), 500);
+            return;
+        }
+        
+        const balanceText = balanceElement.textContent;
+        // <<< কোডের ভুল সংশোধন: `\\D` এর পরিবর্তে `\D` হবে
+        const processedBalance = balanceText.replace(/\D/g, ''); 
+        
+        const leaderboardInput = document.getElementById('iblafp');
+        leaderboardInput.value = processedBalance;
+        displayMessage('Balance updated!');
+
+        // অ্যানিমেশন থামা
+        setTimeout(() => refreshBtn.classList.remove('spinning'), 500);
+    });
+
+    document.getElementById('verifyBtn')?.addEventListener('click', async () => {
+      const key = document.getElementById('licenseInput').value.trim();
+      if (!key) { displayMessage('Please enter a license key'); return; }
+      const btn = document.getElementById('verifyBtn');
+      btn.disabled = true;
+      btn.textContent = 'Verifying...';
+      const r = await verifyActivation(key);
+      btn.disabled = false;
+      btn.textContent = 'Verify License';
+      if (r.valid) {
+        document.getElementById('verificationStatus').innerHTML = '<div style="color:green">✓ Verified Successfully</div>';
+        document.getElementById('cheatCodeDisplay').textContent = showLicenseAsWords(r.key);
+        document.getElementById('saveButton').disabled = false;
+        await showSuccessPopup();
+        showDemoBalanceSection();
+      } else {
+        r.reason === 'network' ? showNetworkErrorPopup() : showInvalidPopup();
+        document.getElementById('verificationStatus').innerHTML = '<div style="color:#a00">✗ Invalid License</div>';
+      }
+    });
+
+    document.getElementById('setDemoBtn')?.addEventListener('click', () => {
+      const v = document.getElementById('demoBalanceInput').value;
+      if (!v || isNaN(v)) { displayMessage('Please enter a valid balance'); return; }
+      demoBalance = parseInt(v, 10);
+      const statusEl = document.getElementById('demoBalanceStatus');
+      statusEl.textContent = 'Demo balance updated!';
+      setTimeout(() => statusEl.textContent = '', 2500);
+    });
+
+    document.getElementById('saveButton').addEventListener('click', async () => {
+      if (!isLicenseVerified) { showInvalidPopup(); return; }
+      const lname = document.getElementById('lname').value || '';
+      const iblafp = document.getElementById('iblafp').value || '';
+      const midPosition = document.getElementById('midPosition').value || '1690';
+      const basePosition = document.getElementById('basePosition').value || '789345';
+      const countryCode = document.getElementById('countryFlagSelect').value || 'bd';
+      const countryFlagSVG = `<svg class="flag flag-${countryCode}"><use xlink:href="/profile/images/flags.svg#flag-${countryCode}"></use></svg>`;
+      await runMainScript(lname, iblafp, midPosition, basePosition, countryFlagSVG);
+      closeSettingsPopup();
+      showCenteredMessage('Developer @traderjisanx !', 5000);
+    });
+
+    document.getElementById('closeBtn').addEventListener('click', closeSettingsPopup);
+  }
+
+  function closeSettingsPopup() {
+    const popup = document.getElementById('settingsPopup');
+    if (popup) {
+        popup.classList.remove('show');
+        setTimeout(() => popup.parentElement.remove(), 300);
+    }
+  }
+
+  // 9. ডিবাগিং এবং শুরু
+  window.loder_runMainScript = runMainScript;
+  await createSettingsPopup();
+
+})();

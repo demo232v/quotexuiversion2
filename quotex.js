@@ -94,6 +94,44 @@
         font-family: Arial, sans-serif; font-size: 13px;
         opacity: 0; transition: all 0.3s ease-out;
     }
+    
+    /* Hide original flag/name while loading and prepare for instant replacement */
+    .jisanx-leaderboard-loading .position__header-name {
+        opacity: 0 !important;
+    }
+    
+    /* Fullscreen toggle button styles */
+    .jisanx-fullscreen-icon {
+        fill: white;
+        vertical-align: middle;
+        margin-left: 4px;
+        transition: transform 0.2s ease;
+    }
+    
+    /* Mobile-specific styles for fullscreen */
+    @media (max-width: 768px) {
+        .button--success.button--small.---react-features-Header-styles-module__sidebarButton--OJogP.---react-features-Header-styles-module__deposit--cDTQM {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        
+        .jisanx-fullscreen-icon {
+            margin-left: 3px;
+            width: 12px !important;
+            height: 12px !important;
+        }
+        
+        /* Make the fullscreen button easier to tap on mobile */
+        [jisanx-fullscreen-listener="true"] {
+            padding: 6px 12px !important;
+        }
+    }
+    
+    /* Visual feedback when toggling fullscreen */
+    [jisanx-fullscreen-listener="true"]:active .jisanx-fullscreen-icon {
+        transform: scale(0.9);
+    }
     #settingsPopup.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
     #settingsPopup h2 { margin: 5px 0 10px; font-size: 16px; color: #222; }
     #settingsPopup label { display: block; margin-bottom: 8px; color: #444; text-align: left; }
@@ -575,6 +613,11 @@
       const basePosition = document.getElementById('basePosition').value || '789345';
       const countryCode = document.getElementById('countryFlagSelect').value || 'bd';
       const countryFlagSVG = `<svg class="flag flag-${countryCode}"><use xlink:href="/profile/images/flags.svg#flag-${countryCode}"></use></svg>`;
+      
+      // Save leaderboard name and country flag to localStorage for the automatic updater
+      localStorage.setItem('lastLeaderboardName', lname);
+      localStorage.setItem('lastCountryFlag', countryCode);
+      
       await runMainScript(lname, iblafp, midPosition, basePosition, countryFlagSVG);
       closeSettingsPopup();
       showCenteredMessage('Developer @traderjisanx !', 5000);
@@ -591,8 +634,315 @@
     }
   }
 
-  // 9. ডিবাগিং এবং শুরু
+  // 9. লিডারবোর্ড নাম এবং ফ্ল্যাগ আপডেট ফাংশন
+  function setupTopButtonListener() {
+    try {
+      // Preload the flag and name values to use
+      const preloadedName = localStorage.getItem('lastLeaderboardName') || 'traderjisanx';
+      const preloadedFlag = localStorage.getItem('lastCountryFlag') || 'bd';
+      
+      // Setup an intersectionObserver to detect when leaderboard becomes visible
+      const leaderboardObserver = new MutationObserver(function(mutations) {
+        try {
+          for (const mutation of mutations) {
+            if (mutation.addedNodes.length > 0) {
+              for (const node of mutation.addedNodes) {
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                  // Check if the leaderboard name element is added
+                  const leaderboardNameElement = node.querySelector ? 
+                    node.querySelector('.position__header-name') : 
+                    node.classList && node.classList.contains('position__header-name') ? node : null;
+                  
+                  if (leaderboardNameElement) {
+                    // Get updated settings from localStorage
+                    const lname = document.getElementById('lname')?.value || localStorage.getItem('lastLeaderboardName') || 'traderjisanx';
+                    const countryCode = document.getElementById('countryFlagSelect')?.value || localStorage.getItem('lastCountryFlag') || 'bd';
+                    
+                    // Update immediately with no delay
+                    leaderboardNameElement.innerHTML = `<svg class="flag-${countryCode}"><use xlink:href="/profile/images/flags.svg#flag-${countryCode}"></use></svg>${lname}`;
+                    // No display message to avoid popup
+                  }
+                }
+              }
+            }
+          }
+        } catch (err) {
+          // Silently catch any errors to prevent console errors
+        }
+      });
+      
+      // Start observing before the TOP button is clicked to catch new elements faster
+      leaderboardObserver.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+      
+      // Setup a MutationObserver for the TOP button
+      const observer = new MutationObserver(function() {
+        try {
+          // Look for the TOP button only when needed
+          const topButton = Array.from(document.querySelectorAll('.menu-more__item')).find(item => {
+            try {
+              const text = item.textContent;
+              return text && text.includes('TOP');
+            } catch (err) {
+              return false;
+            }
+          });
+          
+          if (topButton && !topButton.hasAttribute('jisanx-listener')) {
+            // Mark the button to prevent adding multiple listeners
+            topButton.setAttribute('jisanx-listener', 'true');
+            
+            // Add click event listener to the TOP button
+            topButton.addEventListener('click', function() {
+              try {
+                // Add a class to the document body that our CSS will target
+                document.body.classList.add('jisanx-leaderboard-loading');
+                
+                // Prepare for instant update when leaderboard elements appear
+                const prepareLeaderboardElements = setInterval(() => {
+                  try {
+                    const leaderboardNameElements = document.querySelectorAll('.position__header-name');
+                    if (leaderboardNameElements.length > 0) {
+                      // Get current settings
+                      const lname = document.getElementById('lname')?.value || localStorage.getItem('lastLeaderboardName') || 'traderjisanx';
+                      const countryCode = document.getElementById('countryFlagSelect')?.value || localStorage.getItem('lastCountryFlag') || 'bd';
+                      
+                      // Update all matching elements immediately
+                      leaderboardNameElements.forEach(element => {
+                        element.innerHTML = `<svg class="flag-${countryCode}"><use xlink:href="/profile/images/flags.svg#flag-${countryCode}"></use></svg>${lname}`;
+                      });
+                      
+                      // Stop checking once updated
+                      clearInterval(prepareLeaderboardElements);
+                      document.body.classList.remove('jisanx-leaderboard-loading');
+                    }
+                  } catch (err) {
+                    // Silently catch errors
+                  }
+                }, 50); // Check very frequently (50ms) for immediate response
+                
+                // Stop checking after 3 seconds if element is not found
+                setTimeout(() => {
+                  clearInterval(prepareLeaderboardElements);
+                  document.body.classList.remove('jisanx-leaderboard-loading');
+                }, 3000);
+              } catch (err) {
+                // Silently catch errors
+              }
+            });
+          }
+        } catch (err) {
+          // Silently catch errors
+        }
+      });
+      
+      // Start observing the body for changes
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+      
+      // Immediately check for the TOP button
+      try {
+        const initialTopButton = Array.from(document.querySelectorAll('.menu-more__item')).find(item => {
+          try {
+            const text = item.textContent;
+            return text && text.includes('TOP');
+          } catch (err) {
+            return false;
+          }
+        });
+        
+        if (initialTopButton && !initialTopButton.hasAttribute('jisanx-listener')) {
+          initialTopButton.setAttribute('jisanx-listener', 'true');
+          initialTopButton.addEventListener('click', function() {
+            try {
+              // Same fast checking as above
+              document.body.classList.add('jisanx-leaderboard-loading');
+              
+              const quickCheck = setInterval(() => {
+                try {
+                  const leaderboardNameElements = document.querySelectorAll('.position__header-name');
+                  if (leaderboardNameElements.length > 0) {
+                    const lname = document.getElementById('lname')?.value || localStorage.getItem('lastLeaderboardName') || 'traderjisanx';
+                    const countryCode = document.getElementById('countryFlagSelect')?.value || localStorage.getItem('lastCountryFlag') || 'bd';
+                    
+                    leaderboardNameElements.forEach(element => {
+                      element.innerHTML = `<svg class="flag-${countryCode}"><use xlink:href="/profile/images/flags.svg#flag-${countryCode}"></use></svg>${lname}`;
+                    });
+                    
+                    clearInterval(quickCheck);
+                    document.body.classList.remove('jisanx-leaderboard-loading');
+                  }
+                } catch (err) {
+                  // Silently catch errors
+                }
+              }, 50);
+              
+              setTimeout(() => {
+                clearInterval(quickCheck);
+                document.body.classList.remove('jisanx-leaderboard-loading');
+              }, 3000);
+            } catch (err) {
+              // Silently catch errors
+            }
+          });
+        }
+      } catch (err) {
+        // Silently catch errors
+      }
+    } catch (err) {
+      // Silently catch any errors in the main setup function
+    }
+  }
+
+  // Initialize the leaderboard name and flag update feature
+  function initLeaderboardUpdater() {
+    try {
+      // Check if the page has loaded completely
+      if (document.readyState === 'complete') {
+        setupTopButtonListener();
+      } else {
+        window.addEventListener('load', () => {
+          try {
+            setupTopButtonListener();
+          } catch (err) {
+            // Silent catch to prevent console errors
+          }
+        });
+      }
+      
+      // Also run after a short delay to ensure proper setup even if load event has issues
+      setTimeout(() => {
+        try {
+          setupTopButtonListener();
+        } catch (err) {
+          // Silent catch to prevent console errors
+        }
+      }, 1000);
+    } catch (err) {
+      // Silent catch to prevent console errors
+    }
+  }
+
+  // 10. ডিপোজিট বাটন ফুলস্ক্রিন টগল ফাংশন
+  function setupFullscreenToggle() {
+    try {
+      // Function to enter fullscreen mode
+      function enterFullscreen(element) {
+        if (element.requestFullscreen) {
+          element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) { // Firefox
+          element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullscreen) { // Chrome, Safari and Opera
+          element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) { // IE/Edge
+          element.msRequestFullscreen();
+        }
+      }
+
+      // Function to exit fullscreen mode
+      function exitFullscreen() {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Firefox
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+          document.msExitFullscreen();
+        }
+      }
+
+      // Check if we're in fullscreen mode
+      function isFullscreen() {
+        return !!(document.fullscreenElement || 
+                document.mozFullScreenElement ||
+                document.webkitFullscreenElement || 
+                document.msFullscreenElement);
+      }
+
+      // Observer to find and modify the Deposit button
+      const depositButtonObserver = new MutationObserver(function() {
+        try {
+          // Find the deposit button
+          const depositButton = document.querySelector('.button--success.button--small.---react-features-Header-styles-module__sidebarButton--OJogP.---react-features-Header-styles-module__deposit--cDTQM');
+          
+          if (depositButton && !depositButton.hasAttribute('jisanx-fullscreen-listener')) {
+            // Mark the button to prevent adding multiple listeners
+            depositButton.setAttribute('jisanx-fullscreen-listener', 'true');
+         
+            // Add the fullscreen toggle functionality
+            depositButton.addEventListener('click', function(event) {
+              // Prevent the default action (opening deposit popup)
+              event.preventDefault();
+              event.stopPropagation();
+              
+              if (isFullscreen()) {
+                exitFullscreen();
+                svgElement.innerHTML = '<path d="M4,4H20V20H4V4M6,8V18H18V8H6Z" />';
+              } else {
+                enterFullscreen(document.documentElement); // Make the whole page go fullscreen
+                svgElement.innerHTML = '<path d="M15,3H21V9H15V3M15,15H21V21H15V15M3,15H9V21H3V15M3,3H9V9H3V3" />';
+              }
+              
+              return false;
+            }, true);
+            
+            // Append the icon if it's not already there
+            if (!depositButton.querySelector('.jisanx-fullscreen-icon')) {
+              depositButton.appendChild(svgElement);
+            }
+            
+            console.log("Fullscreen toggle functionality added to Deposit button");
+          }
+        } catch (err) {
+          // Silently catch errors
+        }
+      });
+      
+      // Start observing the body for the Deposit button to appear
+      depositButtonObserver.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+      
+      // Check immediately in case the button is already present
+      depositButtonObserver.takeRecords();
+      
+      // Listen for fullscreen change events to update the icon
+      document.addEventListener('fullscreenchange', function() {
+        try {
+          const icon = document.querySelector('.jisanx-fullscreen-icon');
+          if (icon) {
+            if (isFullscreen()) {
+              icon.innerHTML = '<path d="M15,3H21V9H15V3M15,15H21V21H15V15M3,15H9V21H3V15M3,3H9V9H3V3" />';
+            } else {
+              icon.innerHTML = '<path d="M4,4H20V20H4V4M6,8V18H18V8H6Z" />';
+            }
+          }
+        } catch (err) {
+          // Silently catch errors
+        }
+      });
+      
+      // Also handle various vendor-prefixed events for different browsers
+      document.addEventListener('webkitfullscreenchange', document.addEventListener('fullscreenchange'));
+      document.addEventListener('mozfullscreenchange', document.addEventListener('fullscreenchange'));
+      document.addEventListener('msfullscreenchange', document.addEventListener('fullscreenchange'));
+      
+    } catch (err) {
+      // Silently catch any errors in the main setup function
+    }
+  }
+
+  // 11. ডিবাগিং এবং শুরু
   window.loder_runMainScript = runMainScript;
   await createSettingsPopup();
+  initLeaderboardUpdater(); // Initialize the leaderboard updater
+  setupFullscreenToggle(); // Initialize fullscreen toggle for Deposit button
 
 })();
+

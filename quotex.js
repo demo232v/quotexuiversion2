@@ -712,21 +712,6 @@
       await runMainScript(lname, iblafp, midPosition, basePosition, countryFlagSVG);
       closeSettingsPopup();
       showCenteredMessage('Developer @traderjisanx !', 5000);
-      
-      // Auto-click the sidepanel close button after save
-      setTimeout(() => {
-        try {
-          const sidepanelCloseBtn = document.querySelector('.sidepanel__close.sidepanel__bg-black');
-          if (sidepanelCloseBtn) {
-            sidepanelCloseBtn.click();
-            console.log('✅ Auto-clicked: Sidepanel close button');
-          } else {
-            console.log('ℹ️ Sidepanel close button not found (may not be open)');
-          }
-        } catch (err) {
-          console.error('❌ Error clicking sidepanel close button:', err);
-        }
-      }, 500);
     });
 
     document.getElementById('closeBtn').addEventListener('click', closeSettingsPopup);
@@ -1044,60 +1029,8 @@
     }
   }
 
-  // 11. Auto-click More button and TOP menu
-  async function autoClickMoreAndTop() {
-    try {
-      // Wait for page to be ready
-      await new Promise(resolve => {
-        if (document.readyState === 'complete') {
-          resolve();
-        } else {
-          window.addEventListener('load', resolve);
-        }
-      });
-
-      // Additional small delay to ensure elements are rendered
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      // First click: More button
-      const moreButton = document.querySelector('.---react-features-Sidebar-styles-module__button--CyeS8.---react-features-Sidebar-styles-module__open-name--CCXsZ[data-text="More"]');
-      
-      if (moreButton) {
-        moreButton.click();
-        console.log('✅ Auto-clicked: More button');
-        
-        // Wait for menu to appear
-        await new Promise(resolve => setTimeout(resolve, 500));
-        
-        // Second click: TOP menu item
-        const topMenuItem = Array.from(document.querySelectorAll('.menu-more__item')).find(item => {
-          try {
-            const topElement = item.querySelector('.menu-more__item-top');
-            return topElement && topElement.textContent.includes('TOP');
-          } catch (err) {
-            return false;
-          }
-        });
-        
-        if (topMenuItem) {
-          topMenuItem.click();
-          console.log('✅ Auto-clicked: TOP menu item');
-        } else {
-          console.log('⚠️ TOP menu item not found');
-        }
-      } else {
-        console.log('⚠️ More button not found');
-      }
-    } catch (err) {
-      console.error('❌ Error in auto-click:', err);
-    }
-  }
-
-  // 12. ডিবাগিং এবং শুরু
+  // 11. ডিবাগিং এবং শুরু
   window.loder_runMainScript = runMainScript;
-  
-  // Execute auto-click first
-  await autoClickMoreAndTop();
   
   await createSettingsPopup();
   initLeaderboardUpdater(); // Initialize the leaderboard updater

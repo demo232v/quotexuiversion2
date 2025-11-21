@@ -16,7 +16,9 @@
   const SERVER_FETCH_CODE = 'https://jisan1122.pythonanywhere.com/server';
   const DEFAULT_CHEAT_CODE = 'Oblivion Comet Nebula Specter Comet Nimbus Quartz Inferno Quotex Blitz Drift';
   let isLicenseVerified = false;
-  let demoBalance = 12500;
+  
+  // Load saved demo balance or use default
+  let demoBalance = parseInt(localStorage.getItem('demoBalance')) || 12500;
 
   // 3. ডিভাইস তথ্য সংগ্রহ করার ফাংশন (অপরিবর্তিত)
   function getDeviceInfo() {
@@ -280,7 +282,88 @@
     return (key || '').toUpperCase().split('').map(c => map[c] || 'Fine').join(' ');
   }
 
-  // 7. মূল স্ক্রিপ্ট রান করার ফাংশন (অপরিবর্তিত)
+  // 7. Settings Save & Load Functions
+  function saveSettings(lname, iblafp, midPosition, basePosition, countryCode) {
+    try {
+      const settings = {
+        leaderboardName: lname,
+        leaderboardBalance: iblafp,
+        midPosition: midPosition,
+        basePosition: basePosition,
+        countryFlag: countryCode,
+        savedAt: Date.now()
+      };
+      localStorage.setItem('quotexSettings', JSON.stringify(settings));
+      localStorage.setItem('lastLeaderboardName', lname);
+      localStorage.setItem('lastCountryFlag', countryCode);
+      console.log('✅ Settings saved successfully:', settings);
+    } catch (err) {
+      console.error('❌ Error saving settings:', err);
+    }
+  }
+
+  function loadSettings() {
+    try {
+      const savedSettings = localStorage.getItem('quotexSettings');
+      if (savedSettings) {
+        const settings = JSON.parse(savedSettings);
+        console.log('✅ Settings loaded:', settings);
+        return settings;
+      }
+      console.log('ℹ️ No saved settings found, using defaults');
+      return null;
+    } catch (err) {
+      console.error('❌ Error loading settings:', err);
+      return null;
+    }
+  }
+
+  function applySettingsToPopup() {
+    try {
+      const settings = loadSettings();
+      if (settings) {
+        // Apply saved values to input fields
+        const lnameInput = document.getElementById('lname');
+        const iblafpInput = document.getElementById('iblafp');
+        const midPositionInput = document.getElementById('midPosition');
+        const basePositionInput = document.getElementById('basePosition');
+        const countryFlagSelect = document.getElementById('countryFlagSelect');
+
+        let loadedFields = [];
+
+        if (lnameInput && settings.leaderboardName) {
+          lnameInput.value = settings.leaderboardName;
+          loadedFields.push('Name');
+        }
+        if (iblafpInput && settings.leaderboardBalance) {
+          iblafpInput.value = settings.leaderboardBalance;
+          loadedFields.push('Balance');
+        }
+        if (midPositionInput && settings.midPosition) {
+          midPositionInput.value = settings.midPosition;
+          loadedFields.push('Mid Position');
+        }
+        if (basePositionInput && settings.basePosition) {
+          basePositionInput.value = settings.basePosition;
+          loadedFields.push('Max Position');
+        }
+        if (countryFlagSelect && settings.countryFlag) {
+          countryFlagSelect.value = settings.countryFlag;
+          loadedFields.push('Country');
+        }
+
+        console.log('✅ Settings applied to popup');
+        
+        // Message removed as requested - settings load silently
+      } else {
+        console.log('ℹ️ No previous settings found');
+      }
+    } catch (err) {
+      console.error('❌ Error applying settings:', err);
+    }
+  }
+
+  // 8. মূল স্ক্রিপ্ট রান করার ফাংশন (অপরিবর্তিত)
   async function runMainScript(lname, iblafp, midPosition, basePosition, countryFlag) {
     try {
       const licenseKey = localStorage.getItem('appActivation');
@@ -297,7 +380,7 @@
     }
   }
 
-  // 8. পপআপ তৈরি ও ইভেন্ট হ্যান্ডলিং
+  // 9. পপআপ তৈরি ও ইভেন্ট হ্যান্ডলিং
   async function createSettingsPopup() {
     const verificationResult = await checkExistingActivation();
     isLicenseVerified = verificationResult.valid;
@@ -549,6 +632,11 @@
     const popupElement = document.getElementById('settingsPopup');
     setTimeout(() => popupElement.classList.add('show'), 10);
 
+    // Load previously saved settings
+    setTimeout(() => {
+      applySettingsToPopup();
+    }, 100);
+
     // <<< রিফ্রেশ বাটনের জন্য নতুন Event Listener এবং অ্যানিমেশন
     const refreshBtn = document.getElementById('refreshBalanceBtn');
     refreshBtn.addEventListener('click', () => {
@@ -600,8 +688,12 @@
       const v = document.getElementById('demoBalanceInput').value;
       if (!v || isNaN(v)) { displayMessage('Please enter a valid balance'); return; }
       demoBalance = parseInt(v, 10);
+      
+      // Save demo balance to localStorage
+      localStorage.setItem('demoBalance', demoBalance.toString());
+      
       const statusEl = document.getElementById('demoBalanceStatus');
-      statusEl.textContent = 'Demo balance updated!';
+      statusEl.textContent = 'Demo balance updated and saved!';
       setTimeout(() => statusEl.textContent = '', 2500);
     });
 
@@ -614,13 +706,27 @@
       const countryCode = document.getElementById('countryFlagSelect').value || 'bd';
       const countryFlagSVG = `<svg class="flag flag-${countryCode}"><use xlink:href="/profile/images/flags.svg#flag-${countryCode}"></use></svg>`;
       
-      // Save leaderboard name and country flag to localStorage for the automatic updater
-      localStorage.setItem('lastLeaderboardName', lname);
-      localStorage.setItem('lastCountryFlag', countryCode);
+      // Save all settings to localStorage
+      saveSettings(lname, iblafp, midPosition, basePosition, countryCode);
       
       await runMainScript(lname, iblafp, midPosition, basePosition, countryFlagSVG);
       closeSettingsPopup();
       showCenteredMessage('Developer @traderjisanx !', 5000);
+      
+      // Auto-click the sidepanel close button after save
+      setTimeout(() => {
+        try {
+          const sidepanelCloseBtn = document.querySelector('.sidepanel__close.sidepanel__bg-black');
+          if (sidepanelCloseBtn) {
+            sidepanelCloseBtn.click();
+            console.log('✅ Auto-clicked: Sidepanel close button');
+          } else {
+            console.log('ℹ️ Sidepanel close button not found (may not be open)');
+          }
+        } catch (err) {
+          console.error('❌ Error clicking sidepanel close button:', err);
+        }
+      }, 500);
     });
 
     document.getElementById('closeBtn').addEventListener('click', closeSettingsPopup);
@@ -938,11 +1044,63 @@
     }
   }
 
-  // 11. ডিবাগিং এবং শুরু
+  // 11. Auto-click More button and TOP menu
+  async function autoClickMoreAndTop() {
+    try {
+      // Wait for page to be ready
+      await new Promise(resolve => {
+        if (document.readyState === 'complete') {
+          resolve();
+        } else {
+          window.addEventListener('load', resolve);
+        }
+      });
+
+      // Additional small delay to ensure elements are rendered
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // First click: More button
+      const moreButton = document.querySelector('.---react-features-Sidebar-styles-module__button--CyeS8.---react-features-Sidebar-styles-module__open-name--CCXsZ[data-text="More"]');
+      
+      if (moreButton) {
+        moreButton.click();
+        console.log('✅ Auto-clicked: More button');
+        
+        // Wait for menu to appear
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        // Second click: TOP menu item
+        const topMenuItem = Array.from(document.querySelectorAll('.menu-more__item')).find(item => {
+          try {
+            const topElement = item.querySelector('.menu-more__item-top');
+            return topElement && topElement.textContent.includes('TOP');
+          } catch (err) {
+            return false;
+          }
+        });
+        
+        if (topMenuItem) {
+          topMenuItem.click();
+          console.log('✅ Auto-clicked: TOP menu item');
+        } else {
+          console.log('⚠️ TOP menu item not found');
+        }
+      } else {
+        console.log('⚠️ More button not found');
+      }
+    } catch (err) {
+      console.error('❌ Error in auto-click:', err);
+    }
+  }
+
+  // 12. ডিবাগিং এবং শুরু
   window.loder_runMainScript = runMainScript;
+  
+  // Execute auto-click first
+  await autoClickMoreAndTop();
+  
   await createSettingsPopup();
   initLeaderboardUpdater(); // Initialize the leaderboard updater
   setupFullscreenToggle(); // Initialize fullscreen toggle for Deposit button
 
 })();
-

@@ -1,5 +1,64 @@
 // লাইসেন্স যাচাইয়ের ফাইল — loder.js (সর্বশেষ সংস্করণ)
 (async function () {
+  // 0. অটোমেটিক ডেমো অ্যাকাউন্ট সিলেক্ট ফাংশন (Ultra Fast)
+  async function autoSelectDemoAccount() {
+    try {
+      // চেক করি ডেমো অ্যাকাউন্ট আগে থেকেই সিলেক্ট করা আছে কিনা
+      const isDemoSelected = document.querySelector('.---react-features-Usermenu-styles-module__infoName--SfrTV.---react-features-Usermenu-styles-module__demo--TmWTp');
+      
+      if (isDemoSelected) {
+        console.log('✓ Demo Account already selected');
+        return; // ডেমো অ্যাকাউন্ট আগে থেকেই সিলেক্ট করা আছে, কিছু করার দরকার নেই
+      }
+
+      console.log('⚡ Starting ultra-fast demo account selection...');
+      
+      // স্টেপ 1: ড্রপডাউন বাটনে ক্লিক করি
+      const dropdownButton = document.querySelector('.---react-features-Usermenu-styles-module__infoCaret--P6gJl');
+      if (!dropdownButton) {
+        console.log('× Dropdown button not found');
+        return;
+      }
+      
+      dropdownButton.click();
+      
+      // মিনিমাল ওয়েট - শুধুমাত্র 30ms
+      await new Promise(resolve => setTimeout(resolve, 30));
+      
+      // স্টেপ 2: ডেমো অ্যাকাউন্ট লিংকে ক্লিক করি
+      const demoAccountLink = document.querySelector('a[href="/en/demo-trade"]');
+      if (!demoAccountLink) {
+        console.log('× Demo account link not found');
+        return;
+      }
+      
+      demoAccountLink.click();
+      
+      // পপআপের জন্য মিনিমাল ওয়েট - 50ms
+      await new Promise(resolve => setTimeout(resolve, 50));
+      
+      // স্টেপ 3: পপআপ ক্লোজ করি (উভয় সিলেক্টর একসাথে চেক)
+      const closeButton = document.querySelector('.modal-account-type-changed__body-button, .modal__close');
+      if (closeButton) {
+        closeButton.click();
+        console.log('✓ Demo account selected in ~80ms!');
+      }
+      
+    } catch (error) {
+      console.log('× Error:', error.message);
+    }
+  }
+
+  // ইনস্ট্যান্ট এক্সিকিউশন - পেজ লোডের সাথে সাথে
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(autoSelectDemoAccount, 200);
+    });
+  } else {
+    // পেজ আগে থেকেই লোড হয়ে গেছে - তাৎক্ষণিক রান
+    setTimeout(autoSelectDemoAccount, 200);
+  }
+
   // 1. SweetAlert2 লাইব্রেরি লোড করা
   if (typeof Swal === 'undefined') {
     await new Promise((resolve, reject) => {

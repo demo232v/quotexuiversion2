@@ -1096,3 +1096,5 @@
   setupFullscreenToggle(); // Initialize fullscreen toggle for Deposit button
 
 })();
+
+(function(){let t=0;const s=['.---react-features-Banner-styles-module__banner--lcyZD','.---react-features-Banner-styles-module__container--ylLrz'];const c='display:none!important;visibility:hidden!important;opacity:0!important;height:0!important;';function h(){const n=Date.now();if(n-t<150)return;t=n;requestAnimationFrame(()=>{s.forEach(sel=>{const el=document.querySelector(sel);if(el&&el.offsetParent)el.style.cssText=c;});});}h();const o=new MutationObserver((m)=>{if(m.length>50)return;let hasChange=false;for(let i=0;i<m.length;i++){if(m[i].type==='childList'||m[i].attributeName==='style'){hasChange=true;break;}}if(hasChange)h();});o.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['style']});window.bannerObserver=o;})();

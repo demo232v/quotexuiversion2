@@ -105,7 +105,6 @@
     const cpuClass = navigator.cpuClass || 'Unknown';
 
     return {
-      fingerprint: localStorage.getItem('deviceFingerprint') || 'dev_' + Math.random().toString(36).substring(2, 15),
       deviceType,
       browser,
       os,
@@ -119,13 +118,41 @@
     };
   }
 
+  // Generate permanent unique device ID
   function getDeviceId() {
-    let deviceId = localStorage.getItem('customDeviceId');
+    let deviceId = localStorage.getItem('permanentDeviceId');
     if (!deviceId) {
-      deviceId = 'dev-' + Math.random().toString(36).substr(2, 12) +
-        '-' + navigator.hardwareConcurrency +
-        '-' + screen.width + 'x' + screen.height;
-      localStorage.setItem('customDeviceId', deviceId);
+      // Create truly unique device ID based on multiple factors
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      ctx.textBaseline = 'top';
+      ctx.font = '14px Arial';
+      ctx.fillText('Device Fingerprint', 2, 2);
+      const canvasData = canvas.toDataURL();
+      
+      // Combine multiple device characteristics for unique ID
+      const fingerprint = [
+        navigator.userAgent,
+        navigator.language,
+        screen.width + 'x' + screen.height,
+        screen.colorDepth,
+        new Date().getTimezoneOffset(),
+        navigator.hardwareConcurrency || 0,
+        navigator.deviceMemory || 0,
+        navigator.maxTouchPoints || 0,
+        canvasData.slice(0, 100) // Use part of canvas fingerprint
+      ].join('|');
+      
+      // Generate hash-like ID
+      let hash = 0;
+      for (let i = 0; i < fingerprint.length; i++) {
+        const char = fingerprint.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+      }
+      
+      deviceId = 'device_' + Math.abs(hash).toString(36) + '_' + Date.now().toString(36);
+      localStorage.setItem('permanentDeviceId', deviceId);
     }
     return deviceId;
   }
@@ -133,11 +160,6 @@
   async function verifyActivation(activationKey) {
     const deviceId = getDeviceId();
     const deviceInfo = getDeviceInfo();
-    
-    // Save device fingerprint permanently
-    if (!localStorage.getItem('deviceFingerprint')) {
-      localStorage.setItem('deviceFingerprint', deviceInfo.fingerprint);
-    }
 
     try {
       const response = await fetch(SERVER_URL, {
@@ -146,7 +168,6 @@
         body: JSON.stringify({
           license_key: activationKey,
           device_id: deviceId,
-          device_fingerprint: deviceInfo.fingerprint,
           device_info: deviceInfo,
           project_type: PROJECT_NAME,
           is_recheck: !!localStorage.getItem('appActivation')

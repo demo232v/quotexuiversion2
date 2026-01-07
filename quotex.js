@@ -1,4 +1,5 @@
 //লাইসেন্স যাচাইয়ের ফাংশন
+// IIFE (Immediately Invoked Function Expression) - Auto-executes on page load
 (async function () {
   // 0. অটোমেটিক ডেমো অ্যাকাউন্ট সিলেক্ট ফাংশন (Ultra Fast)
   async function autoSelectDemoAccount() {
@@ -77,12 +78,72 @@
   let settingsPopup = null;
   let demoBalance = parseInt(localStorage.getItem('demoBalance')) || 12500; // Load saved demo balance
 
-  function getDeviceInfo() {
+  // ===== ADVANCED DEVICE FINGERPRINTING (Console-Optimized) =====
+  async function generateCanvasFingerprint() {
+    try {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = 200;
+      canvas.height = 50;
+      
+      ctx.textBaseline = "top";
+      ctx.font = "14px 'Arial'";
+      ctx.textBaseline = "alphabetic";
+      ctx.fillStyle = "#f60";
+      ctx.fillRect(125, 1, 62, 20);
+      ctx.fillStyle = "#069";
+      ctx.fillText("Quotex FP 2026", 2, 15);
+      ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+      ctx.fillText("Quotex FP 2026", 4, 17);
+      
+      const dataURL = canvas.toDataURL();
+      
+      // Create hash
+      let hash = 0;
+      for (let i = 0; i < dataURL.length; i++) {
+        const char = dataURL.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+      }
+      return Math.abs(hash).toString(16);
+    } catch (e) {
+      return 'canvas_error';
+    }
+  }
+
+  async function generateWebGLFingerprint() {
+    try {
+      const canvas = document.createElement('canvas');
+      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+      
+      if (!gl) return 'webgl_not_supported';
+      
+      const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+      const vendor = debugInfo ? gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) : 'Unknown';
+      const renderer = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : 'Unknown';
+      
+      const webglData = vendor + '|' + renderer;
+      
+      // Create hash
+      let hash = 0;
+      for (let i = 0; i < webglData.length; i++) {
+        const char = webglData.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+      }
+      return Math.abs(hash).toString(16);
+    } catch (e) {
+      return 'webgl_error';
+    }
+  }
+
+  async function getAdvancedDeviceInfo() {
     const userAgent = navigator.userAgent;
     let deviceType = 'Unknown';
     let browser = 'Unknown';
     let os = 'Unknown';
 
+    // Browser Detection
     if (userAgent.includes('Firefox')) browser = 'Firefox';
     else if (userAgent.includes('SamsungBrowser')) browser = 'Samsung Browser';
     else if (userAgent.includes('Opera') || userAgent.includes('OPR/')) browser = 'Opera';
@@ -91,35 +152,67 @@
     else if (userAgent.includes('Chrome')) browser = 'Chrome';
     else if (userAgent.includes('Safari')) browser = 'Safari';
 
+    // OS Detection
     if (userAgent.includes('Android')) os = 'Android';
     else if (userAgent.includes('Linux')) os = 'Linux';
     else if (userAgent.includes('iPhone') || userAgent.includes('iPad') || userAgent.includes('iPod')) os = 'iOS';
     else if (userAgent.includes('Macintosh')) os = 'Mac OS';
     else if (userAgent.includes('Windows')) os = 'Windows';
 
+    // Device Type
     if (userAgent.includes('Mobile')) deviceType = 'Mobile';
     else if (userAgent.includes('Tablet')) deviceType = 'Tablet';
     else deviceType = 'Desktop';
 
+    // PRIORITY 1: Screen Resolution (MOST IMPORTANT)
     const screenResolution = `${window.screen.width}x${window.screen.height}`;
-    const cpuClass = navigator.cpuClass || 'Unknown';
+    
+    // PRIORITY 2 & 3: Canvas and WebGL Fingerprints (GPU-based)
+    const canvasFingerprint = await generateCanvasFingerprint();
+    const webglFingerprint = await generateWebGLFingerprint();
+    
+    // PRIORITY 4-6: Other console-reliable attributes
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const language = navigator.language || navigator.userLanguage || 'Unknown';
+    const colorDepth = screen.colorDepth || 24;
+    const pixelRatio = window.devicePixelRatio || 1;
+    const platform = navigator.platform || 'Unknown';
+    
+    // OPTIONAL: May not be available in all browsers
+    const cpuCores = navigator.hardwareConcurrency || 'Unknown';
+    const deviceMemory = navigator.deviceMemory || 'Unknown';
 
     return {
-      fingerprint: localStorage.getItem('deviceFingerprint') || 'dev_' + Math.random().toString(36).substring(2, 15),
-      deviceType,
+      // Console-reliable attributes (always available)
+      screenResolution,        // PRIMARY IDENTIFIER
+      canvasFingerprint,       // GPU signature
+      webglFingerprint,        // GPU signature
+      timezone,
+      language,
+      colorDepth,
+      pixelRatio,
+      platform,
       browser,
       os,
+      deviceType,
       userAgent,
-      screenResolution,
-      cpuClass,
-      language: navigator.language,
-      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      plugins: Array.from(navigator.plugins).map(p => p.name).join(', '),
-      hardwareConcurrency: navigator.hardwareConcurrency || 'Unknown'
+      
+      // Optional attributes
+      cpuCores,
+      deviceMemory,
+      
+      // Additional info
+      plugins: Array.from(navigator.plugins || []).map(p => p.name).join(', ') || 'None'
     };
   }
 
+  function getDeviceInfo() {
+    // Kept for backward compatibility, but now calls advanced function
+    return getAdvancedDeviceInfo();
+  }
+
   function getDeviceId() {
+    // Legacy function - not used with new fingerprinting, but kept for compatibility
     let deviceId = localStorage.getItem('customDeviceId');
     if (!deviceId) {
       deviceId = 'dev-' + Math.random().toString(36).substr(2, 12) +
@@ -131,13 +224,15 @@
   }
 
   async function verifyActivation(activationKey) {
-    const deviceId = getDeviceId();
-    const deviceInfo = getDeviceInfo();
+    console.log('🔍 Generating advanced device fingerprint...');
+    const deviceInfo = await getAdvancedDeviceInfo();
     
-    // Save device fingerprint permanently
-    if (!localStorage.getItem('deviceFingerprint')) {
-      localStorage.setItem('deviceFingerprint', deviceInfo.fingerprint);
-    }
+    console.log('📱 Device Info:', {
+      screen: deviceInfo.screenResolution,
+      platform: deviceInfo.platform,
+      browser: deviceInfo.browser,
+      os: deviceInfo.os
+    });
 
     try {
       const response = await fetch(SERVER_URL, {
@@ -145,8 +240,6 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           license_key: activationKey,
-          device_id: deviceId,
-          device_fingerprint: deviceInfo.fingerprint,
           device_info: deviceInfo,
           project_type: PROJECT_NAME,
           is_recheck: !!localStorage.getItem('appActivation')
@@ -170,6 +263,12 @@
         localStorage.setItem('appActivation', activationKey);
         localStorage.setItem('lastVerified', Date.now());
         isLicenseVerified = true;
+        
+        // Display device fingerprint info if available
+        if (data.device_fingerprint) {
+          console.log('✅ Device recognized! Fingerprint:', data.device_fingerprint.substring(0, 16) + '...');
+        }
+        
         return { valid: true, key: activationKey };
       } else if (data.message && data.message.includes('device limit')) {
         return {
@@ -194,7 +293,7 @@
         return { valid: false, reason: 'invalid' };
       }
     } catch (error) {
-      console.error('Verification failed:', error);
+      console.error('❌ Verification failed:', error);
       return { valid: false, reason: 'network' };
     }
   }
@@ -1485,8 +1584,7 @@ const styles = `
       return;
     }
 
-    const deviceId = getDeviceId();
-    const deviceInfo = getDeviceInfo();
+    const deviceInfo = await getAdvancedDeviceInfo();
 
     try {
       // Fetch QUOTEX.js script from server
@@ -1495,8 +1593,6 @@ const styles = `
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           license_key: savedKey,
-          device_id: deviceId,
-          device_fingerprint: deviceInfo.fingerprint,
           device_info: deviceInfo,
           project_type: PROJECT_NAME
         })
@@ -1568,4 +1664,4 @@ const styles = `
 
   // Create the settings popup
   await createSettingsPopup();
-})();
+})(); // End of main async IIFE
